@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We Find Car Insurance Even When Others Won't — Call Now</title>
+<meta name="description" content="DUI, SR-22, bad credit, suspended license, lapsed policy or no SSN — we find coverage when others won't. Licensed agents available now. Call free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #0D2447;
+  --navy2:  #162F58;
+  --green:  #1A7A3C;
+  --green-l:#F0F9F4;
+  --green-b:#C8E6D4;
+  --white:  #FFFFFF;
+  --gray:   #F7F8FA;
+  --border: #E2E8EF;
+  --text:   #0F172A;
+  --mid:    #475569;
+  --muted:  #94A3B8;
+  --sans: 'Plus Jakarta Sans', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}.logo span{color:#7DD3A8}
+.hcta{display:flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:9px 18px;border-radius:99px;text-decoration:none;transition:background .15s;white-space:nowrap}
+.hcta:hover{background:#146030}
+.hcta svg{width:14px;height:14px;flex-shrink:0}
+
+/* HERO */
+.hero{background:var(--navy);padding:64px 24px 60px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(125,211,168,0.12);color:#7DD3A8;border:1px solid rgba(125,211,168,0.25);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:26px}
+.hero h1{font-size:clamp(28px,5vw,50px);font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.025em;max-width:720px;margin:0 auto 20px}
+.hero h1 .hi{color:#7DD3A8}
+.hero-sub{font-size:clamp(15px,2vw,17px);color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 40px;line-height:1.7}
+.hero-sub strong{color:rgba(255,255,255,0.9);font-weight:600}
+.cta-block{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cta-main{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:#fff;font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 42px;border-radius:99px;text-decoration:none;box-shadow:0 0 0 4px rgba(26,122,60,0.28),0 8px 32px rgba(26,122,60,0.3);transition:background .15s,transform .1s;letter-spacing:-.01em}
+.cta-main:hover{background:#146030;transform:translateY(-2px)}
+.cta-main:active{transform:translateY(0)}
+.cta-main svg{width:20px;height:20px;flex-shrink:0}
+.cta-sub-line{font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:.01em}
+.cta-sub-line span{color:rgba(255,255,255,0.65);font-weight:500}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--navy2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:16px 24px}
+.ts-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 32px}
+.ti{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.55)}
+.tic{width:17px;height:17px;background:rgba(125,211,168,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:#7DD3A8;font-weight:800;flex-shrink:0}
+.tdiv{width:1px;height:14px;background:rgba(255,255,255,0.1)}
+
+/* SITUATIONS GRID */
+.situations{padding:64px 24px;background:var(--white)}
+.situations-inner{max-width:860px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--green);margin-bottom:10px;text-align:center}
+.sec-h{font-size:clamp(22px,3.5vw,32px);font-weight:800;text-align:center;letter-spacing:-.025em;margin-bottom:8px;color:var(--text);line-height:1.2}
+.sec-sub{font-size:15px;color:var(--mid);text-align:center;max-width:480px;margin:0 auto 40px}
+.sit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.sit-card{background:var(--gray);border:1.5px solid var(--border);border-radius:14px;padding:24px;transition:border-color .15s,box-shadow .15s}
+.sit-card:hover{border-color:var(--green-b);box-shadow:0 4px 20px rgba(26,122,60,0.08)}
+.sit-card.featured{background:var(--green-l);border-color:var(--green-b);border-width:2px}
+.sit-icon{font-size:26px;line-height:1;margin-bottom:12px}
+.sit-title{font-size:15px;font-weight:800;color:var(--text);margin-bottom:6px}
+.sit-body{font-size:13px;color:var(--mid);line-height:1.6}
+.sit-body strong{color:var(--text);font-weight:700}
+.sit-pill{display:inline-block;background:var(--green-l);border:1px solid var(--green-b);color:var(--green);font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;margin-top:10px}
+.sit-card.featured .sit-pill{background:#fff}
+
+/* STATS */
+.stats-row{background:var(--navy);padding:44px 24px}
+.stats-inner{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-box{text-align:center;padding:10px 12px;border-right:1px solid rgba(255,255,255,0.08)}
+.stat-box:last-child{border-right:none}
+.stat-n{font-size:clamp(26px,4vw,38px);font-weight:800;color:#7DD3A8;letter-spacing:-.03em;line-height:1;margin-bottom:7px}
+.stat-l{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.45}
+.stat-l strong{display:block;font-weight:700;color:rgba(255,255,255,0.8);font-size:13px;margin-bottom:1px}
+
+/* TESTIMONIALS */
+.section{padding:68px 24px}
+.section-inner{max-width:840px;margin:0 auto}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tcard{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:24px;transition:border-color .15s,box-shadow .15s}
+.tcard:hover{border-color:var(--green-b);box-shadow:0 4px 20px rgba(26,122,60,0.08)}
+.tcard-quote{font-size:14.5px;color:var(--mid);line-height:1.72;margin-bottom:20px;position:relative}
+.tcard-quote::before{content:'\201C';font-size:48px;line-height:0;color:var(--green-b);position:absolute;top:14px;left:-6px;font-family:Georgia,serif}
+.tcard-quote p{padding-left:18px}
+.tcard-quote strong{color:var(--text);font-weight:700}
+.tcard-foot{display:flex;align-items:center;gap:10px}
+.avi{width:38px;height:38px;border-radius:50%;font-size:13px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.t-name{font-size:13px;font-weight:700;color:var(--text)}
+.t-loc{font-size:11px;color:var(--muted);margin-top:1px}
+.save-badge{margin-left:auto;background:var(--green-l);border:1.5px solid var(--green-b);color:var(--green);font-size:14px;font-weight:800;padding:5px 12px;border-radius:99px;white-space:nowrap;letter-spacing:-.01em}
+
+/* STEPS */
+.how-section{background:var(--gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:68px 24px}
+.steps{max-width:580px;margin:36px auto 0}
+.step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step-n{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-t{font-size:16px;font-weight:700;color:var(--text);margin-bottom:5px}
+.step-d{font-size:14px;color:var(--mid);line-height:1.65}
+.step-d strong{color:var(--text);font-weight:600}
+
+/* LEGIT */
+.legit-strip{background:var(--white);border-top:1px solid var(--border);padding:26px 24px}
+.legit-inner{max-width:680px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 36px}
+.legit-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--mid)}
+.legit-icon{width:20px;height:20px;border:1.5px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--navy);flex-shrink:0}
+
+/* BOTTOM CTA */
+.bottom-cta{background:var(--navy);padding:68px 24px;text-align:center;position:relative;overflow:hidden}
+.bottom-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 110%,rgba(26,122,60,0.18) 0%,transparent 70%);pointer-events:none}
+.btag{display:inline-block;background:rgba(125,211,168,0.12);color:#7DD3A8;border:1px solid rgba(125,211,168,0.2);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:24px}
+.bottom-cta h2{font-size:clamp(26px,4.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px;position:relative}
+.bottom-cta h2 .hi{color:#7DD3A8}
+.bottom-cta h3{font-size:clamp(15px,2vw,18px);font-weight:500;color:rgba(255,255,255,0.55);margin-bottom:36px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.65;position:relative}
+.cta-white{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--navy);font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 44px;border-radius:99px;text-decoration:none;box-shadow:0 8px 36px rgba(0,0,0,0.25);transition:transform .1s,box-shadow .15s;letter-spacing:-.01em;position:relative}
+.cta-white:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
+.cta-white svg{width:20px;height:20px;color:var(--green);flex-shrink:0}
+.cta-white-sub{font-size:13px;color:rgba(255,255,255,0.38);margin-top:14px;position:relative}
+.cta-white-sub span{color:rgba(255,255,255,0.6)}
+
+/* STICKY */
+.sticky-bar{position:fixed;bottom:24px;right:24px;z-index:300;transform:translateY(150%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.sticky-bar.visible{transform:translateY(0)}
+.sticky-left{display:none}.sticky-left .s1{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.sticky-left .s2{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
+.sticky-left .s2 span{color:#7DD3A8;font-weight:600}
+.sticky-btn{display:flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-family:var(--sans);font-size:14px;font-weight:800;padding:13px 22px;border-radius:99px;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 0 0 3px rgba(26,122,60,0.35);transition:background .15s;letter-spacing:-.01em}
+.sticky-btn:hover{background:#146030}
+.sticky-btn svg{width:15px;height:15px}
+.sticky-btn .s-sub{font-size:10px;font-weight:500;opacity:.7;display:block}
+
+/* FOOTER */
+footer{padding:28px 24px 96px;text-align:center;font-size:11px;color:var(--muted);line-height:1.8;background:var(--gray);border-top:1px solid var(--border)}
+footer a{color:var(--muted);text-decoration:underline}
+
+@media(max-width:540px){
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .stat-box:nth-child(2){border-right:none}
+  .stat-box:nth-child(3){border-top:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08)}
+  .stat-box:nth-child(4){border-top:1px solid rgba(255,255,255,0.08);border-right:none}
+  .tdiv{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Auto<span>Savings</span></div>
+  <a href="tel:+18005550000" class="hcta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+    Call Free Now
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag" id="heroTag">Coverage available — even in difficult situations</div>
+  <h1 id="heroH1">We Find Car Insurance<br>Coverage <span class="hi">Even When</span><br>Others Won't.</h1>
+  <p class="hero-sub" id="heroSub">
+    DUI, SR-22, bad credit, suspended license, lapsed policy — most companies turn you away or charge you a fortune. Our licensed agents specialize in <strong>finding coverage for exactly your situation.</strong>
+  </p>
+  <div class="cta-block">
+    <a href="tel:+18005550000" class="cta-main">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      Call Now To Drop Your Rate
+    </a>
+    <p class="cta-sub-line" id="ctaSub"><span>Free · No judgment · </span>Licensed agents answer immediately</p>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="ts-inner">
+    <div class="ti"><div class="tic">✓</div>No situation turned away</div>
+    <div class="tdiv"></div>
+    <div class="ti"><div class="tic">✓</div>High-risk specialists available</div>
+    <div class="tdiv"></div>
+    <div class="ti"><div class="tic">✓</div>SR-22 filing included</div>
+    <div class="tdiv"></div>
+    <div class="ti"><div class="tic">✓</div>Same-day coverage available</div>
+  </div>
+</div>
+
+<!-- SITUATIONS GRID -->
+<section class="situations">
+  <div class="situations-inner">
+    <p class="eyebrow">Who we help</p>
+    <h2 class="sec-h" id="sitH2">Whatever Your Situation —<br>We Find You Coverage</h2>
+    <p class="sec-sub">Most standard insurers won't touch these situations. We work with carriers that specialize in exactly these cases.</p>
+    <div class="sit-grid">
+
+      <div class="sit-card" id="card-sr22">
+        <div class="sit-icon">📋</div>
+        <div class="sit-title">SR-22 Required</div>
+        <div class="sit-body">Need an SR-22 filing after a DUI, DWI, or traffic violation? Our agents file it the same day and find the <strong>most affordable SR-22 coverage available</strong> in your state.</div>
+        <div class="sit-pill">Same-day SR-22 filing</div>
+      </div>
+
+      <div class="sit-card" id="card-dui">
+        <div class="sit-icon">⚖️</div>
+        <div class="sit-title">DUI / DWI on Record</div>
+        <div class="sit-body">A DUI doesn't have to mean unaffordable insurance forever. Our agents work with high-risk carriers who specialize in DUI cases and offer <strong>far better rates than standard insurers.</strong></div>
+        <div class="sit-pill">High-risk specialists</div>
+      </div>
+
+      <div class="sit-card featured" id="card-bad-credit">
+        <div class="sit-icon">💳</div>
+        <div class="sit-title">Bad or No Credit</div>
+        <div class="sit-body">Many carriers use credit scores to set rates — but not all of them. Our agents find carriers that <strong>don't penalize you for bad credit</strong> and offer competitive rates regardless.</div>
+        <div class="sit-pill">No credit check options</div>
+      </div>
+
+      <div class="sit-card" id="card-suspended">
+        <div class="sit-icon">🚫</div>
+        <div class="sit-title">Suspended License</div>
+        <div class="sit-body">Suspended or recently reinstated license? Some situations still allow coverage, and our agents know exactly which carriers will work with your specific <strong>license status.</strong></div>
+        <div class="sit-pill">License specialists</div>
+      </div>
+
+      <div class="sit-card" id="card-lapse">
+        <div class="sit-icon">⏱️</div>
+        <div class="sit-title">Lapsed Policy</div>
+        <div class="sit-body">Been without insurance for a while? Carriers penalize coverage gaps — but some far less than others. Our agents find the ones that <strong>won't punish you for a lapse</strong> in coverage.</div>
+        <div class="sit-pill">Lapse-friendly carriers</div>
+      </div>
+
+      <div class="sit-card" id="card-nossn">
+        <div class="sit-icon">🌎</div>
+        <div class="sit-title">No SSN / Immigrant Drivers</div>
+        <div class="sit-body">No Social Security number? Some carriers accept an ITIN or foreign license. Our agents know which ones operate in your state and can get you <strong>legally covered today.</strong></div>
+        <div class="sit-pill">ITIN &amp; foreign license accepted</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat-box">
+      <div class="stat-n">50+</div>
+      <div class="stat-l"><strong>carriers searched</strong>including high-risk specialists</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n" id="statMain">Same day</div>
+      <div class="stat-l"><strong id="statLabel">SR-22 filing &amp; coverage</strong>activated immediately</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n">2 min</div>
+      <div class="stat-l"><strong>average call length</strong>to find your coverage option</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n">All 50</div>
+      <div class="stat-l"><strong>states covered</strong>licensed agents available now</div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Real customers · real situations</p>
+    <h2 class="sec-h" id="testimH2">Others Said No. We Found Them Coverage.</h2>
+    <p class="sec-sub" style="text-align:center;max-width:460px;margin:0 auto 36px;font-size:15px;color:var(--mid)">No judgment. No runaround. Just coverage.</p>
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p id="t1q">"Got a DUI two years ago and every company I called either rejected me or quoted me $400+/month. Called here and the agent found me <strong>full coverage for $167/month</strong> — filed my SR-22 the same day."</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#3B5EA6">MR</div>
+          <div>
+            <div class="t-name" id="t1n">Marcus R.</div>
+            <div class="t-loc" id="t1l">DUI on record · Texas</div>
+          </div>
+          <div class="save-badge" id="t1b">$167/mo</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p id="t2q">"My credit score is under 550 and I kept getting quoted astronomical rates. The agent found a carrier that <strong>doesn't weight credit the same way — my rate was $94/month.</strong> I almost didn't call because I assumed it was hopeless."</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#2D7A4F">TJ</div>
+          <div>
+            <div class="t-name" id="t2n">Tanya J.</div>
+            <div class="t-loc" id="t2l">Bad credit · Ohio</div>
+          </div>
+          <div class="save-badge" id="t2b">$94/mo</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p id="t3q">"I hadn't had insurance for 8 months after losing my job. Was dreading calling because I knew the gap would cost me. Agent found a carrier that <strong>didn't penalize the lapse — $112/month, covered same day.</strong>"</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#7B4F9E">DW</div>
+          <div>
+            <div class="t-name" id="t3n">David W.</div>
+            <div class="t-loc" id="t3l">8-month lapse · Florida</div>
+          </div>
+          <div class="save-badge" id="t3b">$112/mo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div style="text-align:center;max-width:840px;margin:0 auto">
+    <p class="eyebrow">Simple process</p>
+    <h2 class="sec-h">Get Covered In 3 Steps — No Matter Your Situation</h2>
+    <p class="sec-sub" style="max-width:440px;margin:0 auto">No judgment. No runaround. Just a call and coverage.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div>
+        <p class="step-t">Call — tell the agent your situation honestly</p>
+        <p class="step-d">A licensed agent picks up immediately. Tell them exactly what's going on — DUI, lapse, bad credit, whatever it is. <strong>There's no judgment and no situation is too difficult.</strong> They've heard it all.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div>
+        <p class="step-t">Hear your options from specialists</p>
+        <p class="step-d">The agent searches carriers that specialize in your specific situation — not the standard ones that already rejected you. <strong>Most callers are surprised that coverage exists and is more affordable than they thought.</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div>
+        <p class="step-t">Get covered today — SR-22 filed same day</p>
+        <p class="step-d">Your policy activates immediately. If you need an SR-22, it's filed the same day. <strong>Coverage starts today.</strong> Proof of insurance delivered within minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGIT STRIP -->
+<div class="legit-strip">
+  <div class="legit-inner">
+    <div class="legit-item"><div class="legit-icon">🔒</div>Secure &amp; confidential</div>
+    <div class="legit-item"><div class="legit-icon">📋</div>Licensed in all 50 states</div>
+    <div class="legit-item"><div class="legit-icon">✓</div>No situation turned away</div>
+    <div class="legit-item"><div class="legit-icon">📞</div>Real agents, no bots</div>
+    <div class="legit-item"><div class="legit-icon">$</div>Free to call, always</div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="btag" id="bottomTag">Coverage available — call now</div>
+  <h2 id="bottomH2">Others Said No.<br>We Find Coverage<br><span class="hi">For Your Situation.</span></h2>
+  <h3 id="bottomSub">No matter what's on your record — DUI, bad credit, lapsed policy, SR-22 — our licensed agents find carriers that will cover you. Most get covered the same day they call.</h3>
+  <div class="cta-block">
+    <a href="tel:+18005550000" class="cta-white">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      Call Now To Drop Your Rate
+    </a>
+    <p class="cta-white-sub"><span>Free · No judgment · </span>Licensed agents answer immediately</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>This is an advertorial and not an official consumer protection update. Coverage availability varies by state, driving record, and carrier eligibility. SR-22 filing availability depends on state requirements. Results shown are from real verified customers — individual rates vary. By calling, you agree to be connected with a licensed insurance agent. We are compensated by the insurer if you choose to purchase a policy. The call is always free.</p>
+  <p style="margin-top:8px">© 2026 AutoSavingsAct.org &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="#">Contact Us</a></p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-left">
+    <div class="s1" id="stickyS1">We Find Coverage Even When Others Won't — Call Now</div>
+    <div class="s2">Free call · <span>No situation turned away · Licensed agents now</span></div>
+  </div>
+  <a href="tel:+18005550000" class="sticky-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+    <div>Call Now To Drop Your Rate<span class="s-sub">Free · No obligation</span></div>
+  </a>
+</div>
+
+<script>
+const bar = document.getElementById('stickyBar');
+const obs = new IntersectionObserver(([e]) => {
+  bar.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0.2 });
+obs.observe(document.querySelector('.hero'));
+</script>
+
+<script>
+/* ── UTM Dynamic Keyword Insertion ── */
+(function () {
+  var raw = new URLSearchParams(window.location.search).get('utm_term') || '';
+  var k = raw.toLowerCase().trim();
+  if (!k) return;
+
+  var variants = [
+
+    /* SR-22 */
+    { match: ['sr22', 'sr-22', 'sr 22', 'sr22 insurance', 'need sr22', 'file sr22'],
+      tag:    'SR-22 insurance — same-day filing available',
+      h1:     'Need SR-22 Insurance?<br>We File It <span class="hi">Same Day</span><br>And Find Your Best Rate.',
+      sub:    'SR-22 doesn\'t have to mean unaffordable or complicated. Our licensed agents find the best SR-22 rate available in your state and <strong>file the certificate the same day — coverage starts immediately.</strong>',
+      ctaSub: '<span>Free · SR-22 filed same day · </span>Licensed agents answer immediately',
+      sitH2:  'SR-22 Drivers — We Handle Everything<br>In One Call',
+      feat:   'card-sr22',
+      statMain:'Same day', statLabel:'SR-22 filing included with coverage',
+      t1q:    '"Three companies rejected me just for needing an SR-22. Called here and the agent handled the whole thing — <strong>coverage started immediately, SR-22 filed same day.</strong> Took about 8 minutes total."',
+      t1n:'Carlos M.', t1l:'SR-22 required · California', t1b:'Covered today',
+      t2q:    '"I had no idea what SR-22 even meant until I got a letter from the DMV. The agent explained everything clearly and <strong>got me covered for $143/month</strong> with the filing included."',
+      t2n:'Janet R.', t2l:'SR-22 first-timer · Texas', t2b:'$143/mo',
+      t3q:    '"My SR-22 was about to expire and I needed to switch carriers. Agent found a better rate than I was already paying — <strong>$38/month cheaper</strong> — and re-filed everything same day."',
+      t3n:'Andre P.', t3l:'SR-22 renewal · Georgia', t3b:'−$38/mo',
+      tH2:    'SR-22 Drivers Called. We Handled Everything.',
+      bottomTag:'SR-22 filing — same day, call now',
+      bottomH2:'Need SR-22?<br>We File It Same Day<br><span class="hi">And Get You Covered.</span>',
+      bottomSub:'Our licensed agents find your best SR-22 rate, handle the filing, and get your coverage started — all in one call. Same day, no runaround.',
+      sticky: 'SR-22 Insurance — Same-Day Filing, Call Now' },
+
+    /* DUI / DWI */
+    { match: ['dui', 'dwi', 'drunk driving', 'dui insurance', 'after dui', 'dui on record'],
+      tag:    'DUI insurance — coverage available now',
+      h1:     'Got A DUI On Your Record?<br>We Still Find You<br><span class="hi">Affordable Coverage.</span>',
+      sub:    'A DUI makes insurance harder to find — but not impossible. Our licensed agents work with high-risk carriers who specialize in DUI cases and offer <strong>far better rates than the companies that already turned you away.</strong>',
+      ctaSub: '<span>Free · DUI specialists available · </span>Licensed agents answer immediately',
+      sitH2:  'DUI On Your Record —<br>We Know Which Carriers Will Cover You',
+      feat:   'card-dui',
+      statMain:'$167', statLabel:'average monthly rate found after DUI',
+      t1q:    '"Got a DUI two years ago and every company I called either rejected me or quoted me $400+/month. Called here and the agent found me <strong>full coverage for $167/month</strong> — filed my SR-22 the same day."',
+      t1n:'Marcus R.', t1l:'DUI on record · Texas', t1b:'$167/mo',
+      t2q:    '"I was paying $389/month after my DUI and thought that was just my life now. The agent found a high-risk specialist carrier — <strong>my new rate is $198/month.</strong> Same coverage."',
+      t2n:'Brianna L.', t2l:'DUI 18 months ago · Florida', t2b:'−$191/mo',
+      t3q:    '"Needed SR-22 after a DWI and dreaded making this call. Agent was completely non-judgmental and found coverage <strong>$140 cheaper per month than what I was quoted elsewhere.</strong>"',
+      t3n:'Raymond T.', t3l:'DWI on record · Illinois', t3b:'−$140/mo',
+      tH2:    'DUI Drivers Called. We Found Them Coverage.',
+      bottomTag:'DUI insurance — find coverage now',
+      bottomH2:'A DUI Doesn\'t Mean<br>Unaffordable Insurance<br><span class="hi">Forever.</span>',
+      bottomSub:'Our licensed agents work with high-risk specialists who provide better rates than standard carriers after a DUI. One call — no judgment, just options.',
+      sticky: 'DUI Insurance — We Find Coverage Others Won\'t, Call Now' },
+
+    /* Bad credit / no credit */
+    { match: ['bad credit', 'no credit', 'poor credit', 'low credit score', 'credit score'],
+      tag:    'Bad credit insurance — no credit check options',
+      h1:     'Bad Credit Doesn\'t Have To Mean<br><span class="hi">Unaffordable</span><br>Car Insurance.',
+      sub:    'Many carriers use your credit score to set rates — but not all of them. Our licensed agents find carriers that <strong>don\'t penalize bad credit</strong> and still offer competitive monthly rates.',
+      ctaSub: '<span>Free · No credit check options · </span>Licensed agents answer immediately',
+      sitH2:  'Bad Credit Drivers —<br>Not Every Carrier Penalizes You',
+      feat:   'card-bad-credit',
+      statMain:'$94', statLabel:'average monthly rate found for bad credit drivers',
+      t1q:    '"My credit score is under 550 and I kept getting quoted astronomical rates. The agent found a carrier that <strong>doesn\'t weight credit the same way — my rate was $94/month.</strong> I almost didn\'t call because I assumed it was hopeless."',
+      t1n:'Tanya J.', t1l:'Bad credit · Ohio', t1b:'$94/mo',
+      t2q:    '"Every online quote came back at $280+ because of my credit. Called here and the agent found a no-credit-check option — <strong>$119/month, same coverage.</strong>"',
+      t2n:'Kevin S.', t2l:'Low credit score · Michigan', t2b:'$119/mo',
+      t3q:    '"Agent explained some carriers don\'t use credit scores at all. Found me one of those — <strong>saved me $143/month compared to the last quote I got online.</strong>"',
+      t3n:'Pamela W.', t3l:'No credit history · Arizona', t3b:'−$143/mo',
+      tH2:    'Bad Credit Drivers Called. We Found Their Rate.',
+      bottomTag:'Bad credit insurance — options available now',
+      bottomH2:'Bad Credit Doesn\'t Mean<br>You\'re Out Of Options.<br><span class="hi">We Find The Right Carrier.</span>',
+      bottomSub:'Not every carrier penalizes bad credit the same way. Our agents find the ones that don\'t — and get you a fair monthly rate regardless of your score.',
+      sticky: 'Bad Credit Car Insurance — We Find Options, Call Now' },
+
+    /* Suspended license */
+    { match: ['suspended license', 'suspended', 'revoked license', 'reinstated', 'license suspended', 'no license'],
+      tag:    'Suspended license — coverage options available',
+      h1:     'Suspended Or Reinstated License?<br>We Find Coverage<br><span class="hi">For Your Situation.</span>',
+      sub:    'A suspended or recently reinstated license limits your options — but doesn\'t eliminate them. Our licensed agents know exactly which carriers work with your specific <strong>license status in your state.</strong>',
+      ctaSub: '<span>Free · License specialists · </span>Licensed agents answer immediately',
+      sitH2:  'License Issues —<br>We Know Which Carriers Will Work With You',
+      feat:   'card-suspended',
+      statMain:'Same day', statLabel:'coverage activated where available',
+      t1q:    '"My license was reinstated 3 months ago and I couldn\'t get anyone to cover me. The agent knew exactly which carriers accept recently reinstated licenses — <strong>got covered the same day I called.</strong>"',
+      t1n:'Jerome H.', t1l:'Recently reinstated · Georgia', t1b:'Covered today',
+      t2q:    '"Was told by two companies they couldn\'t help me because of my license history. This agent found a specialist carrier — <strong>$158/month and no rejection.</strong>"',
+      t2n:'Stephanie M.', t2l:'License issues · Texas', t2b:'$158/mo',
+      t3q:    '"Agent was upfront about what my options were and didn\'t waste my time. Found a carrier that works with my situation — <strong>covered in about 12 minutes.</strong>"',
+      t3n:'Earl D.', t3l:'License reinstated · Florida', t3b:'Covered in 12 min',
+      tH2:    'License Issue Drivers Called. We Found Their Options.',
+      bottomTag:'Suspended license — coverage options available',
+      bottomH2:'License Issues Don\'t<br>Have To Leave You<br><span class="hi">Without Coverage.</span>',
+      bottomSub:'Our agents know which carriers in your state work with suspended or reinstated licenses. One honest call gets you real options — no runaround.',
+      sticky: 'Suspended License Insurance — We Find Options, Call Now' },
+
+    /* After lapse */
+    { match: ['lapse', 'lapsed', 'no insurance', 'gap in coverage', 'been without', 'uninsured', 'let policy lapse'],
+      tag:    'Coverage gap — lapse-friendly carriers available',
+      h1:     'Had A Gap In Coverage?<br>We Find Carriers That<br><span class="hi">Won\'t Penalize You.</span>',
+      sub:    'A lapse in coverage raises your rates with most carriers — but some penalize it far less than others. Our licensed agents find the ones that <strong>won\'t hold your coverage gap against you</strong> the way standard insurers do.',
+      ctaSub: '<span>Free · Lapse-friendly options · </span>Licensed agents answer immediately',
+      sitH2:  'Coverage Gap Drivers —<br>Not Every Carrier Treats Lapses The Same',
+      feat:   'card-lapse',
+      statMain:'$112', statLabel:'average monthly rate found after a coverage lapse',
+      t1q:    '"I hadn\'t had insurance for 8 months after losing my job. Was dreading calling because I knew the gap would cost me. Agent found a carrier that <strong>didn\'t penalize the lapse — $112/month, covered same day.</strong>"',
+      t1n:'David W.', t1l:'8-month lapse · Florida', t1b:'$112/mo',
+      t2q:    '"My policy lapsed for 4 months and the first two companies I called quoted me $290+. Agent found a lapse-friendly carrier — <strong>$131/month for full coverage.</strong>"',
+      t2n:'Alicia T.', t2l:'4-month lapse · Illinois', t2b:'$131/mo',
+      t3q:    '"Thought the gap in my coverage was going to follow me for years. Agent explained some carriers treat it differently — <strong>found me a rate $119/month.</strong> Didn\'t even hesitate."',
+      t3n:'Robert M.', t3l:'Coverage gap · North Carolina', t3b:'$119/mo',
+      tH2:    'Coverage Gap Drivers Called. We Found Them A Rate.',
+      bottomTag:'Coverage gap — lapse-friendly options available',
+      bottomH2:'A Coverage Gap Doesn\'t<br>Have To Destroy<br><span class="hi">Your Rate Forever.</span>',
+      bottomSub:'Some carriers penalize coverage lapses far less than others. Our agents find those carriers for you — one call and you\'re covered today at a fair rate.',
+      sticky: 'Coverage Gap Insurance — Lapse-Friendly Options, Call Now' },
+
+    /* Immigrants / no SSN / ITIN */
+    { match: ['no ssn', 'no social security', 'itin', 'immigrant', 'foreign license', 'international license', 'undocumented', 'without ssn'],
+      tag:    'No SSN — ITIN &amp; foreign license accepted',
+      h1:     'No Social Security Number?<br>We Find Carriers That<br><span class="hi">Accept Your ITIN.</span>',
+      sub:    'Not having an SSN doesn\'t mean you can\'t get car insurance. Some carriers accept an ITIN or foreign license. Our licensed agents know which ones operate in your state and can <strong>get you legally covered today.</strong>',
+      ctaSub: '<span>Free · ITIN accepted · </span>Licensed agents answer immediately',
+      sitH2:  'No SSN Drivers —<br>ITIN &amp; Foreign License Options Available',
+      feat:   'card-nossn',
+      statMain:'Same day', statLabel:'coverage activated with ITIN or foreign license',
+      t1q:    '"I\'ve been in the US for 3 years and every company I called required an SSN. The agent found a carrier that accepts my ITIN — <strong>got covered the same day.</strong> Finally legally driving."',
+      t1n:'Ana G.', t1l:'ITIN holder · California', t1b:'Covered today',
+      t2q:    '"I have a foreign driver\'s license and thought I couldn\'t get insured here. Agent knew exactly which carriers accept international licenses in my state — <strong>covered in 15 minutes.</strong>"',
+      t2n:'Rafael M.', t2l:'Foreign license · Texas', t2b:'Covered in 15 min',
+      t3q:    '"My family member needed insurance but has no SSN yet. Called for advice and the agent found a real solution — <strong>$134/month using just the ITIN and state ID.</strong>"',
+      t3n:'Maria L.', t3l:'ITIN only · Florida', t3b:'$134/mo',
+      tH2:    'No-SSN Drivers Called. We Found Them Legal Coverage.',
+      bottomTag:'No SSN — ITIN accepted, call now',
+      bottomH2:'No SSN Doesn\'t Mean<br>No Insurance.<br><span class="hi">We Find The Right Carrier.</span>',
+      bottomSub:'Some carriers accept an ITIN or foreign license in place of an SSN. Our agents know which ones are available in your state — and get you legally covered today.',
+      sticky: 'No SSN Car Insurance — ITIN Accepted, Call Now' }
+
+  ];
+
+  var v = variants.find(function(item) {
+    return item.match.some(function(m) { return k.indexOf(m) !== -1; });
+  });
+  if (!v) return;
+
+  function set(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
+
+  set('heroTag',   v.tag);
+  set('heroH1',    v.h1);
+  set('heroSub',   v.sub);
+  set('ctaSub',    v.ctaSub);
+  set('sitH2',     v.sitH2);
+  set('statMain',  v.statMain);
+  set('statLabel', v.statLabel);
+  set('t1q',       v.t1q);
+  set('t1n',       v.t1n);
+  set('t1l',       v.t1l);
+  set('t1b',       v.t1b);
+  set('t2q',       v.t2q);
+  set('t2n',       v.t2n);
+  set('t2l',       v.t2l);
+  set('t2b',       v.t2b);
+  set('t3q',       v.t3q);
+  set('t3n',       v.t3n);
+  set('t3l',       v.t3l);
+  set('t3b',       v.t3b);
+  set('testimH2',  v.tH2);
+  set('bottomTag', v.bottomTag);
+  set('bottomH2',  v.bottomH2);
+  set('bottomSub', v.bottomSub);
+  set('stickyS1',  v.sticky);
+
+  /* Highlight the relevant card */
+  if (v.feat) {
+    document.querySelectorAll('.sit-card').forEach(function(c){ c.classList.remove('featured'); });
+    var fc = document.getElementById(v.feat);
+    if (fc) fc.classList.add('featured');
+  }
+
+})();
+</script>
+
+</body>
+</html>
