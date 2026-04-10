@@ -446,7 +446,7 @@ header {
   transition: transform .35s cubic-bezier(.16,1,.3,1);
 }
 .sticky-bar.visible { transform: translateY(0); }
-.sticky-left { line-height: 1.35; }
+.sticky-left { min-width: 0; flex: 1; line-height: 1.35; }
 .sticky-left .s1 {
   font-size: 15px;
   font-weight: 800;
@@ -483,15 +483,35 @@ header {
 
 /* ─── FOOTER ─── */
 footer {
-  padding: 28px 24px 96px;
+  padding: 32px 24px calc(100px + env(safe-area-inset-bottom, 0px));
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
-  line-height: 1.8;
+  line-height: 1.65;
   background: var(--gray);
   border-top: 1px solid var(--border);
 }
 footer a { color: var(--muted); text-decoration: underline; }
+.footer-disclaimer { max-width: min(100%, 560px); margin: 0 auto; text-wrap: balance; }
+.footer-meta {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.footer-copy { color: var(--muted); }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 14px;
+  row-gap: 8px;
+}
+.footer-links a { white-space: nowrap; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 540px) {
@@ -501,6 +521,29 @@ footer a { color: var(--muted); text-decoration: underline; }
   .stat-box:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
   .t-div { display: none; }
   .step { flex-direction: row; }
+  footer {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: calc(168px + env(safe-area-inset-bottom, 0px));
+  }
+  .sticky-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+  .sticky-left { text-align: center; }
+  .sticky-left .s1 { font-size: 14px; line-height: 1.28; }
+  .sticky-left .s2 { font-size: 11px; line-height: 1.4; margin-top: 4px; }
+  .sticky-btn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    white-space: normal;
+    text-align: center;
+  }
+  .sticky-btn > div { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 }
 </style>
 </head>
@@ -705,8 +748,15 @@ footer a { color: var(--muted); text-decoration: underline; }
 
 <!-- FOOTER -->
 <footer>
-  <p>This is an advertorial and not an official consumer protection update. Results shown are from real verified customers — individual savings vary based on driver profile, location, and available carriers. "Up to 70%" reflects the maximum savings reported and is not guaranteed for every caller. By calling, you agree to be connected with a licensed insurance agent. We are compensated by the insurer if you choose to switch. The call and rate check are always free.</p>
-  <p style="margin-top:8px">© 2026 AutoSavingsAct.org &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="#">Contact Us</a></p>
+  <p class="footer-disclaimer">This is an advertorial and not an official consumer protection update. Results shown are from real verified customers — individual savings vary based on driver profile, location, and available carriers. "Up to 70%" reflects the maximum savings reported and is not guaranteed for every caller. By calling, you agree to be connected with a licensed insurance agent. We are compensated by the insurer if you choose to switch. The call and rate check are always free.</p>
+  <div class="footer-meta">
+    <span class="footer-copy">© 2026 AutoSavingsAct.org</span>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </div>
 </footer>
 
 <!-- STICKY BOTTOM BAR -->
@@ -731,6 +781,203 @@ const obs = new IntersectionObserver(([e]) => {
   bar.classList.toggle('visible', !e.isIntersecting);
 }, { threshold: 0.2 });
 obs.observe(hero);
+</script>
+
+
+
+
+<script>
+/* ── UTM Dynamic Keyword Insertion ── */
+(function () {
+  var raw = new URLSearchParams(window.location.search).get('utm_term') || '';
+  var k = raw.toLowerCase().trim();
+  if (!k) return;
+
+  var variants = [
+
+    /* California */
+    { match: ['california', ' ca '],
+      tag:       'Auto insurance alert — California 2026',
+      h1:        'Most California Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'Your CA insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One 2-minute call to our licensed agents finds out exactly how much you're overpaying.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed CA agents answer immediately',
+      sticky:    'California Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My CA Rate Now' },
+
+    /* Texas */
+    { match: ['texas', ' tx '],
+      tag:       'Auto insurance alert — Texas 2026',
+      h1:        'Most Texas Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'Your TX insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One call to our licensed Texas agents reveals exactly how much you've been overpaying.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed TX agents answer immediately',
+      sticky:    'Texas Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My TX Rate Now' },
+
+    /* Florida */
+    { match: ['florida', ' fl '],
+      tag:       'Auto insurance alert — Florida 2026',
+      h1:        'Most Florida Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'FL rates are among the highest in the country — and your insurer counts on you not switching. One call to our licensed agents shows you a better rate fast.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed FL agents answer immediately',
+      sticky:    'Florida Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My FL Rate Now' },
+
+    /* New York */
+    { match: ['new york', ' ny '],
+      tag:       'Auto insurance alert — New York 2026',
+      h1:        'Most New York Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'NY drivers pay some of the highest insurance rates in the country. One 2-minute call to our licensed agents checks if you're one of the thousands <strong>massively overpaying.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed NY agents answer immediately',
+      sticky:    'New York Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My NY Rate Now' },
+
+    /* Georgia */
+    { match: ['georgia', ' ga '],
+      tag:       'Auto insurance alert — Georgia 2026',
+      h1:        'Most Georgia Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'Your GA insurer quietly raises your rate at every renewal — even with no claims. One 2-minute call to our licensed Georgia agents finds you a better rate immediately.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed GA agents answer immediately',
+      sticky:    'Georgia Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My GA Rate Now' },
+
+    /* Arizona */
+    { match: ['arizona', ' az '],
+      tag:       'Auto insurance alert — Arizona 2026',
+      h1:        'Most Arizona Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'AZ drivers are routinely overcharged at renewal — even with a clean record. One call to our licensed Arizona agents compares your rate against dozens of better options instantly.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed AZ agents answer immediately',
+      sticky:    'Arizona Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My AZ Rate Now' },
+
+    /* Illinois */
+    { match: ['illinois', ' il '],
+      tag:       'Auto insurance alert — Illinois 2026',
+      h1:        'Most Illinois Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'IL drivers are often overpaying without knowing it. One 2-minute call to our licensed Illinois agents compares your rate and finds you a lower option — same coverage, lower price.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed IL agents answer immediately',
+      sticky:    'Illinois Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My IL Rate Now' },
+
+    /* Overpaying / overcharged */
+    { match: ['overpay', 'overcharg', 'too much', 'paying too'],
+      tag:       'You're probably being overcharged',
+      h1:        'Your Insurer Has Been Quietly<br>Raising Your Rate.<br><span class="pct">Fix It In One Call.</span>',
+      sub:       'Insurance companies count on you not checking. One 2-minute call to our licensed agents compares your rate against dozens of carriers and shows you exactly how much you've been overpaying.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Stop Overpaying — Cut Your Rate By Up To 70% Today!',
+      stickyBtn: 'Stop Overpaying Now' },
+
+    /* Switch / cancel */
+    { match: ['switch', 'cancel', 'change insur', 'new policy', 'change my'],
+      tag:       'Switch and start saving today',
+      h1:        'Switch Car Insurance In<br>One 2-Minute Call.<br><span class="pct">Save Up To 70% Instantly.</span>',
+      sub:       'Switching is easier than you think. Our licensed agents handle cancellation of your old policy for you — and most drivers are paying less <strong>the very same day.</strong>',
+      ctaSub:    '<span>Free · We cancel your old policy · </span>Same-day coverage',
+      sticky:    'Switch In One Call — Save Up To 70% Immediately!',
+      stickyBtn: 'Switch & Save Now' },
+
+    /* Compare / shop */
+    { match: ['compar', 'best rate', 'cheapest rate', 'lowest rate', 'shop'],
+      tag:       'Compare rates in 2 minutes — free',
+      h1:        'Compare Car Insurance Rates<br>Across Dozens Of Carriers —<br><span class="pct">In One 2-Minute Call.</span>',
+      sub:       'Stop comparing sites one by one. One call to our licensed agents compares rates across dozens of carriers simultaneously — and most drivers find a rate <strong>up to 70% lower.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Compare Dozens Of Rates In One Call — Save Up To 70%!',
+      stickyBtn: 'Compare My Rates Now' },
+
+    /* Near me / local */
+    { match: ['near me', 'local', 'my area', 'my zip'],
+      tag:       'Local licensed agents — available now',
+      h1:        'Local Agents Find Drivers<br>Car Insurance Rates<br><span class="pct">Up To 70% Cheaper.</span>',
+      sub:       'Our licensed local agents know every carrier available in your area. One 2-minute call compares your current rate against the best local options — <strong>most drivers are shocked by the difference.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Local agents answer immediately',
+      sticky:    'Local Agents Available Now — Save Up To 70% On Your Rate!',
+      stickyBtn: 'Talk To Local Agent Now' },
+
+    /* Renewal */
+    { match: ['renew', 'renewal', 'expir'],
+      tag:       'Before you renew — read this',
+      h1:        'Don't Renew Until You Check<br>If You're Being Overcharged.<br><span class="pct">Save Up To 70% In One Call.</span>',
+      sub:       'Renewal time is when insurers quietly hike your rate. Before you auto-renew, one 2-minute call to our licensed agents compares what you're about to pay against dozens of better options.',
+      ctaSub:    '<span>Free · No commitment · </span>Takes under 2 minutes',
+      sticky:    'Don't Auto-Renew — You Could Be Paying 70% Too Much!',
+      stickyBtn: 'Check Before Renewing' },
+
+    /* Bad credit */
+    { match: ['bad credit', 'no credit', 'poor credit', 'credit check', 'low credit'],
+      tag:       'Bad credit? You can still save big',
+      h1:        'Bad Credit Drivers Still Cut<br>Their Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'Your credit score doesn't have to mean high insurance rates forever. Our licensed agents compare carriers that specialize in <strong>lower rates for bad credit drivers</strong> — one call finds your best option.',
+      ctaSub:    '<span>Free · No credit check · </span>Licensed agents answer immediately',
+      sticky:    'Bad Credit Drivers — Still Cut Your Rate By Up To 70%!',
+      stickyBtn: 'Check My Rate Now' },
+
+    /* SR-22 */
+    { match: ['sr22', 'sr-22', 'sr 22', 'dui', 'dwi', 'suspended license', 'high risk'],
+      tag:       'SR-22 insurance — affordable options',
+      h1:        'Need SR-22 Insurance?<br>Cut Your Rate By Up To<br><span class="pct">70% — One Call Away.</span>',
+      sub:       'SR-22 doesn't have to mean unaffordable. Our licensed agents find SR-22 coverage across dozens of carriers and most drivers are <strong>shocked at how much lower their rate can be.</strong>',
+      ctaSub:    '<span>Free · SR-22 filing included · </span>Licensed agents answer immediately',
+      sticky:    'SR-22 Drivers — Cut Your Rate By Up To 70% Today!',
+      stickyBtn: 'Get SR-22 Rate Now' },
+
+    /* Liability only */
+    { match: ['liability', 'liability only', 'minimum coverage', 'basic coverage', 'state minimum'],
+      tag:       'Liability only — lowest rates available',
+      h1:        'Liability Only Car Insurance<br>At The Lowest Rate.<br><span class="pct">Save Up To 70% In One Call.</span>',
+      sub:       'You only need to pay for the coverage you actually want. Our licensed agents find the cheapest liability-only rates available in your state — <strong>most drivers overpay by hundreds per year.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Liability Only — Get The Lowest Rate Available, Call Now!',
+      stickyBtn: 'Get Liability Rate Now' },
+
+    /* Young / new driver */
+    { match: ['young driver', 'new driver', 'teen', 'student', '18 year', '19 year', '20 year', '21 year', 'first time'],
+      tag:       'Young drivers — big savings available',
+      h1:        'Young Drivers Are Cutting<br>Their Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'New and young drivers don't have to accept sky-high rates. Our licensed agents compare dozens of carriers and find options specifically suited for <strong>young drivers — often far cheaper than expected.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Young Drivers — Cut Your Rate By Up To 70% Today!',
+      stickyBtn: 'Get Young Driver Rate' },
+
+    /* Monthly payment / pay monthly */
+    { match: ['monthly', 'pay monthly', 'month to month', 'monthly payment'],
+      tag:       'Monthly car insurance — lowest rate',
+      h1:        'Cut Your Monthly Car<br>Insurance Payment By Up To<br><span class="pct">70% In One Call.</span>',
+      sub:       'One call to our licensed agents compares monthly rates across dozens of carriers. Most drivers find a <strong>significantly lower monthly payment — same coverage, same vehicle.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Lower Your Monthly Payment By Up To 70% — Call Now!',
+      stickyBtn: 'Lower My Monthly Payment' },
+
+    /* Online */
+    { match: ['online', 'instant quote', 'quick quote'],
+      tag:       'Get your rate in 2 minutes — free',
+      h1:        'Get A Lower Car Insurance Rate<br>In One Quick Call.<br><span class="pct">Save Up To 70% Today.</span>',
+      sub:       'No forms, no waiting, no back-and-forth. One 2-minute call to our licensed agents gets you a rate comparison across dozens of carriers — <strong>most drivers save immediately.</strong>',
+      ctaSub:    '<span>Free · No forms · </span>Licensed agents answer immediately',
+      sticky:    'Get Your Lower Rate In 2 Minutes — Call Now!',
+      stickyBtn: 'Get My Rate Now' }
+
+  ];
+
+  var v = variants.find(function(item) {
+    return item.match.some(function(m) { return k.indexOf(m) !== -1; });
+  });
+  if (!v) return;
+
+  function setHTML(sel, html) { var el = document.querySelector(sel); if (el) el.innerHTML = html; }
+  function setStickyBtn(text) {
+    var div = document.querySelector('.sticky-btn div'); if (!div) return;
+    var sub = div.querySelector('.s-sub');
+    div.innerHTML = text + (sub ? sub.outerHTML : '');
+  }
+
+  setHTML('.hero-tag', v.tag);
+  setHTML('.hero h1', v.h1);
+  setHTML('.hero-sub', v.sub);
+  setHTML('.cta-sub-line', v.ctaSub);
+  setHTML('.sticky-bar .s1', v.sticky);
+  setStickyBtn(v.stickyBtn);
+})();
 </script>
 
 </body>

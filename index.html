@@ -3,371 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Car Insurance From $19/Month — Special Discounts for Low Income Drivers</title>
-<meta name="description" content="Low income auto insurance from $19/month. EBT cardholders and homeowners qualify for extra discounts. Licensed agents find your lowest rate. Call free.">
+<title>AutoSavings — Find Lower Car Insurance</title>
+<meta name="description" content="Choose a page to compare rates with licensed agents. Low income, $0 down, and savings options.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#0D2447;--navy2:#162F58;
-  --green:#1A7A3C;--green-l:#F0F9F4;--green-b:#C8E6D4;
-  --white:#FFFFFF;--gray:#F7F8FA;--border:#E2E8EF;
-  --text:#0F172A;--mid:#475569;--muted:#94A3B8;
-  --sans:'Plus Jakarta Sans',sans-serif;
+:root {
+  --navy: #0D2447;
+  --green: #1A7A3C;
+  --green-l: #F0F9F4;
+  --green-b: #C8E6D4;
+  --white: #FFFFFF;
+  --gray: #F7F8FA;
+  --border: #E2E8EF;
+  --text: #0F172A;
+  --mid: #475569;
+  --muted: #94A3B8;
+  --sans: 'Plus Jakarta Sans', sans-serif;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-
-header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06)}
-.logo{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}.logo span{color:#7DD3A8}
-.hcta{display:flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:9px 18px;border-radius:99px;text-decoration:none;transition:background .15s;white-space:nowrap}
-.hcta:hover{background:#146030}
-.hcta svg{width:14px;height:14px;flex-shrink:0}
-
-.hero{background:var(--navy);padding:64px 24px 60px;text-align:center}
-.hero-tag{display:inline-block;background:rgba(125,211,168,0.12);color:#7DD3A8;border:1px solid rgba(125,211,168,0.25);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:26px}
-.hero h1{font-size:clamp(28px,5vw,50px);font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.025em;max-width:680px;margin:0 auto 20px}
-.hero h1 .hi{color:#7DD3A8}
-.hero-sub{font-size:clamp(15px,2vw,17px);color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 40px;line-height:1.7}
-.hero-sub strong{color:rgba(255,255,255,0.9);font-weight:600}
-.cta-block{display:flex;flex-direction:column;align-items:center;gap:10px}
-.cta-main{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:#fff;font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 42px;border-radius:99px;text-decoration:none;box-shadow:0 0 0 4px rgba(26,122,60,0.28),0 8px 32px rgba(26,122,60,0.3);transition:background .15s,transform .1s;letter-spacing:-.01em}
-.cta-main:hover{background:#146030;transform:translateY(-2px)}
-.cta-main:active{transform:translateY(0)}
-.cta-main svg{width:20px;height:20px;flex-shrink:0}
-.cta-sub-line{font-size:13px;color:rgba(255,255,255,0.4)}
-.cta-sub-line span{color:rgba(255,255,255,0.65);font-weight:500}
-
-.trust-strip{background:var(--navy2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:16px 24px}
-.ts-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 32px}
-.ti{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.55)}
-.tic{width:17px;height:17px;background:rgba(125,211,168,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:#7DD3A8;font-weight:800;flex-shrink:0}
-.tdiv{width:1px;height:14px;background:rgba(255,255,255,0.1)}
-
-/* DISCOUNT GRID */
-.discounts{padding:64px 24px;background:var(--white)}
-.disc-inner{max-width:820px;margin:0 auto}
-.eyebrow{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--green);margin-bottom:10px;text-align:center}
-.sec-h{font-size:clamp(22px,3.5vw,32px);font-weight:800;text-align:center;letter-spacing:-.025em;margin-bottom:8px;color:var(--text);line-height:1.2}
-.sec-sub{font-size:15px;color:var(--mid);text-align:center;max-width:480px;margin:0 auto 40px}
-.disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.disc-card{background:var(--gray);border:1.5px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s}
-.disc-card:hover{border-color:var(--green-b)}
-.disc-icon{font-size:24px;line-height:1}
-.disc-title{font-size:15px;font-weight:700;color:var(--text)}
-.disc-body{font-size:13px;color:var(--mid);line-height:1.6}
-.disc-body strong{color:var(--text);font-weight:700}
-.disc-pill{display:inline-block;background:var(--green-l);border:1px solid var(--green-b);color:var(--green);font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px}
-
-/* STATS */
-.stats-row{background:var(--navy);padding:44px 24px}
-.stats-inner{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat-box{text-align:center;padding:10px 12px;border-right:1px solid rgba(255,255,255,0.08)}
-.stat-box:last-child{border-right:none}
-.stat-n{font-size:clamp(26px,4vw,38px);font-weight:800;color:#7DD3A8;letter-spacing:-.03em;line-height:1;margin-bottom:7px}
-.stat-l{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.45}
-.stat-l strong{display:block;font-weight:700;color:rgba(255,255,255,0.8);font-size:13px;margin-bottom:1px}
-
-/* TESTIMONIALS */
-.section{padding:68px 24px}
-.section-inner{max-width:840px;margin:0 auto}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.tcard{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:24px;transition:border-color .15s,box-shadow .15s}
-.tcard:hover{border-color:var(--green-b);box-shadow:0 4px 20px rgba(26,122,60,0.08)}
-.tcard-quote{font-size:14.5px;color:var(--mid);line-height:1.72;margin-bottom:20px;position:relative}
-.tcard-quote::before{content:'\201C';font-size:48px;line-height:0;color:var(--green-b);position:absolute;top:14px;left:-6px;font-family:Georgia,serif}
-.tcard-quote p{padding-left:18px}
-.tcard-quote strong{color:var(--text);font-weight:700}
-.tcard-foot{display:flex;align-items:center;gap:10px}
-.avi{width:38px;height:38px;border-radius:50%;font-size:13px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.t-name{font-size:13px;font-weight:700;color:var(--text)}
-.t-loc{font-size:11px;color:var(--muted);margin-top:1px}
-.save-badge{margin-left:auto;background:var(--green-l);border:1.5px solid var(--green-b);color:var(--green);font-size:14px;font-weight:800;padding:5px 12px;border-radius:99px;white-space:nowrap}
-
-/* STEPS */
-.how-section{background:var(--gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:68px 24px}
-.steps{max-width:580px;margin:36px auto 0}
-.step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--border);align-items:flex-start}
-.step:last-child{border-bottom:none}
-.step-n{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.step-t{font-size:16px;font-weight:700;color:var(--text);margin-bottom:5px}
-.step-d{font-size:14px;color:var(--mid);line-height:1.65}
-.step-d strong{color:var(--text);font-weight:600}
-
-.legit-strip{background:var(--white);border-top:1px solid var(--border);padding:26px 24px}
-.legit-inner{max-width:680px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 36px}
-.legit-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--mid)}
-.legit-icon{width:20px;height:20px;border:1.5px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--navy)}
-
-.bottom-cta{background:var(--navy);padding:68px 24px;text-align:center;position:relative;overflow:hidden}
-.bottom-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 110%,rgba(26,122,60,0.18) 0%,transparent 70%);pointer-events:none}
-.btag{display:inline-block;background:rgba(125,211,168,0.12);color:#7DD3A8;border:1px solid rgba(125,211,168,0.2);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:24px}
-.bottom-cta h2{font-size:clamp(26px,4.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px;position:relative}
-.bottom-cta h2 .hi{color:#7DD3A8}
-.bottom-cta h3{font-size:clamp(15px,2vw,18px);font-weight:500;color:rgba(255,255,255,0.55);margin-bottom:36px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.65;position:relative}
-.cta-white{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--navy);font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 44px;border-radius:99px;text-decoration:none;box-shadow:0 8px 36px rgba(0,0,0,0.25);transition:transform .1s,box-shadow .15s;letter-spacing:-.01em;position:relative}
-.cta-white:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-.cta-white svg{width:20px;height:20px;color:var(--green);flex-shrink:0}
-.cta-white-sub{font-size:13px;color:rgba(255,255,255,0.38);margin-top:14px;position:relative}
-.cta-white-sub span{color:rgba(255,255,255,0.6)}
-
-.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:2px solid var(--green);padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:300;transform:translateY(100%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
-.sticky-bar.visible{transform:translateY(0)}
-.sticky-left .s1{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
-.sticky-left .s2{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
-.sticky-left .s2 span{color:#7DD3A8;font-weight:600}
-.sticky-btn{display:flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-family:var(--sans);font-size:14px;font-weight:800;padding:13px 22px;border-radius:99px;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 0 0 3px rgba(26,122,60,0.35);transition:background .15s;letter-spacing:-.01em}
-.sticky-btn:hover{background:#146030}
-.sticky-btn svg{width:15px;height:15px}
-.sticky-btn .s-sub{font-size:10px;font-weight:500;opacity:.7;display:block}
-
-footer{padding:28px 24px 96px;text-align:center;font-size:11px;color:var(--muted);line-height:1.8;background:var(--gray);border-top:1px solid var(--border)}
-footer a{color:var(--muted);text-decoration:underline}
-
-@media(max-width:540px){
-  .stats-inner{grid-template-columns:1fr 1fr}
-  .stat-box:nth-child(2){border-right:none}
-  .stat-box:nth-child(3){border-top:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08)}
-  .stat-box:nth-child(4){border-top:1px solid rgba(255,255,255,0.08);border-right:none}
-  .tdiv{display:none}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--gray);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+header {
+  background: var(--navy);
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.logo { font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+.logo span { color: #7DD3A8; }
+main {
+  flex: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 20px 48px;
+  width: 100%;
+}
+h1 {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.lead {
+  text-align: center;
+  color: var(--mid);
+  font-size: 15px;
+  margin-bottom: 32px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+a.card {
+  display: block;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+a.card:hover {
+  border-color: var(--green-b);
+  box-shadow: 0 4px 20px rgba(26, 122, 60, 0.08);
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card-title::after {
+  content: '→';
+  color: var(--green);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.55;
+}
+.tag {
+  display: inline-block;
+  background: var(--green-l);
+  border: 1px solid var(--green-b);
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 99px;
+  margin-bottom: 10px;
+}
+footer {
+  padding: 24px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+footer a { color: var(--muted); }
 </style>
 </head>
 <body>
 
 <header>
   <div class="logo">Auto<span>Savings</span></div>
-  <a href="tel:+18005550000" class="hcta">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
-    Check My Rate Free
-  </a>
 </header>
 
-<section class="hero">
-  <div class="hero-tag">Low income discount — available now</div>
-  <h1>Car Insurance From<br><span class="hi">$19/Month.</span><br>Extra Discounts For<br>EBT &amp; Homeowners.</h1>
-  <p class="hero-sub">
-    45,752 Americans — including EBT cardholders, SNAP recipients, and homeowners — found <strong>car insurance they can actually afford</strong> by calling our licensed agents. You could be next.
-  </p>
-  <div class="cta-block">
-    <a href="tel:+18005550000" class="cta-main">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
-      Call Now To Find Your Lowest Rate
+<main>
+  <h1>Pick a page</h1>
+  <p class="lead">Open the offer that fits your situation. Each page connects you with licensed agents for a free rate check.</p>
+
+  <div class="cards">
+    <a class="card" href="low-income-ebt.html">
+      <span class="tag">EBT &amp; low income</span>
+      <div class="card-title">Low income &amp; EBT discounts</div>
+      <p class="card-desc">From $19/mo with extra discounts for EBT, SNAP, homeowners, and seniors.</p>
     </a>
-    <p class="cta-sub-line"><span>Free · No credit check · </span>Licensed agents answer immediately</p>
-  </div>
-</section>
-
-<div class="trust-strip">
-  <div class="ts-inner">
-    <div class="ti"><div class="tic">✓</div>From $19/month</div>
-    <div class="tdiv"></div>
-    <div class="ti"><div class="tic">✓</div>EBT &amp; SNAP discounts available</div>
-    <div class="tdiv"></div>
-    <div class="ti"><div class="tic">✓</div>No credit check required</div>
-    <div class="tdiv"></div>
-    <div class="ti"><div class="tic">✓</div>All 50 states</div>
-  </div>
-</div>
-
-<!-- WHO QUALIFIES -->
-<section class="discounts">
-  <div class="disc-inner">
-    <p class="eyebrow">Who qualifies for extra discounts</p>
-    <h2 class="sec-h">More People Qualify Than You Think</h2>
-    <p class="sec-sub">Our agents match you with carriers that specifically reward these situations with lower rates.</p>
-    <div class="disc-grid">
-      <div class="disc-card">
-        <div class="disc-icon">🛒</div>
-        <div class="disc-title">EBT &amp; SNAP Card Holders</div>
-        <div class="disc-body">If you receive food assistance, you qualify for <strong>additional discounts</strong> that most insurance companies don't advertise publicly.</div>
-        <div class="disc-pill">Extra discount available</div>
-      </div>
-      <div class="disc-card">
-        <div class="disc-icon">🏠</div>
-        <div class="disc-title">Homeowners With Multiple Cars</div>
-        <div class="disc-body">Bundling your home and 2+ vehicles unlocks <strong>multi-policy discounts</strong> that can cut your monthly rate significantly.</div>
-        <div class="disc-pill">Bundle savings available</div>
-      </div>
-      <div class="disc-card">
-        <div class="disc-icon">👴</div>
-        <div class="disc-title">Seniors On Fixed Income</div>
-        <div class="disc-body">Drivers 65+ on Social Security or pension income qualify for <strong>senior-specific programs</strong> with rates as low as $19/month.</div>
-        <div class="disc-pill">Senior rate available</div>
-      </div>
-      <div class="disc-card">
-        <div class="disc-icon">📉</div>
-        <div class="disc-title">Low Mileage Drivers</div>
-        <div class="disc-body">Drive fewer than 7,500 miles a year? You're paying too much. <strong>Low mileage programs</strong> can cut your rate by up to 40%.</div>
-        <div class="disc-pill">Mileage discount available</div>
-      </div>
-      <div class="disc-card">
-        <div class="disc-icon">🏠</div>
-        <div class="disc-title">Renters With Good Records</div>
-        <div class="disc-body">Bundle your renters insurance with your auto policy and access <strong>combined rates</strong> that are significantly lower than buying both separately.</div>
-        <div class="disc-pill">Bundle discount available</div>
-      </div>
-      <div class="disc-card">
-        <div class="disc-icon">🚗</div>
-        <div class="disc-title">Any Driver Struggling With Their Bill</div>
-        <div class="disc-body">Even with no special status, our agents find rates that <strong>most people don't know exist</strong> — from smaller carriers that don't advertise heavily.</div>
-        <div class="disc-pill">Lower rate likely available</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats-row">
-  <div class="stats-inner">
-    <div class="stat-box">
-      <div class="stat-n">$19</div>
-      <div class="stat-l"><strong>lowest monthly rate</strong>available through our agents</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-n">45K+</div>
-      <div class="stat-l"><strong>drivers enrolled</strong>in the last 30 days</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-n">$961</div>
-      <div class="stat-l"><strong>average annual savings</strong>for drivers who call</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-n">$0</div>
-      <div class="stat-l"><strong>cost to call</strong>free service, zero obligation</div>
-    </div>
-  </div>
-</div>
-
-<!-- TESTIMONIALS -->
-<section class="section">
-  <div class="section-inner">
-    <p class="eyebrow">Real customers · real savings</p>
-    <h2 class="sec-h">They Called. Their Bill Dropped. So Can Yours.</h2>
-    <p class="sec-sub" style="text-align:center;max-width:460px;margin:0 auto 36px;font-size:15px;color:var(--mid)">Same vehicle. Same coverage. A bill they can actually afford.</p>
-    <div class="tgrid">
-      <div class="tcard">
-        <div class="tcard-quote">
-          <p>"I'm on a fixed income and was paying $140/month. Called in and the agent found me a plan for <strong>$41/month — same coverage, same everything.</strong> I was in shock. I didn't know rates this low existed."</p>
-        </div>
-        <div class="tcard-foot">
-          <div class="avi" style="background:#3B5EA6">EJ</div>
-          <div>
-            <div class="t-name">Eleanor J.</div>
-            <div class="t-loc">Ohio · Fixed income, senior</div>
-          </div>
-          <div class="save-badge">$41/mo</div>
-        </div>
-      </div>
-      <div class="tcard">
-        <div class="tcard-quote">
-          <p>"I use EBT and wasn't expecting any special deal — just called to see. Agent told me I qualify for an additional discount. <strong>Ended up at $29/month for liability coverage.</strong> Can't complain at all."</p>
-        </div>
-        <div class="tcard-foot">
-          <div class="avi" style="background:#2D7A4F">KT</div>
-          <div>
-            <div class="t-name">Kevin T.</div>
-            <div class="t-loc">Georgia · EBT cardholder</div>
-          </div>
-          <div class="save-badge">$29/mo</div>
-        </div>
-      </div>
-      <div class="tcard">
-        <div class="tcard-quote">
-          <p>"I have a home and 2 cars and was paying separately for everything. Agent bundled it all. <strong>My car insurance alone dropped from $187/month to $73.</strong> Bundling made a massive difference."</p>
-        </div>
-        <div class="tcard-foot">
-          <div class="avi" style="background:#7B4F9E">ML</div>
-          <div>
-            <div class="t-name">Marcus L.</div>
-            <div class="t-loc">Michigan · Homeowner, 2 vehicles</div>
-          </div>
-          <div class="save-badge">$73/mo</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how-section">
-  <div style="text-align:center;max-width:840px;margin:0 auto">
-    <p class="eyebrow">Simple process</p>
-    <h2 class="sec-h">Find Your Lowest Rate In 3 Steps</h2>
-    <p class="sec-sub" style="max-width:440px;margin:0 auto">Call now — it takes about 2 minutes and costs absolutely nothing.</p>
-  </div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-n">1</div>
-      <div>
-        <p class="step-t">Call — agent answers immediately</p>
-        <p class="step-d">A licensed agent picks up. Tell them your vehicle, zip code, and what you're currently paying. <strong>Mention your EBT card or homeowner status</strong> so they can unlock any additional discounts.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">2</div>
-      <div>
-        <p class="step-t">Hear your actual rate — including your discounts</p>
-        <p class="step-d">The agent searches across all available carriers and reads you the lowest rate they find for your specific situation. <strong>No obligation to take it.</strong></p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">3</div>
-      <div>
-        <p class="step-t">Switch and start saving today</p>
-        <p class="step-d">If the rate works for you, coverage starts immediately. <strong>You could be paying $19–$39/month by tonight</strong> instead of what you're paying now.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="legit-strip">
-  <div class="legit-inner">
-    <div class="legit-item"><div class="legit-icon">🔒</div>Secure &amp; confidential</div>
-    <div class="legit-item"><div class="legit-icon">📋</div>Licensed in all 50 states</div>
-    <div class="legit-item"><div class="legit-icon">✓</div>No credit check required</div>
-    <div class="legit-item"><div class="legit-icon">📞</div>Real agents, no bots</div>
-    <div class="legit-item"><div class="legit-icon">$</div>Free to call, always</div>
-  </div>
-</div>
-
-<section class="bottom-cta">
-  <div class="btag">Low income discount — call now</div>
-  <h2>Affordable Car Insurance<br>Exists. <span class="hi">$19/Month Proves It.</span></h2>
-  <h3>Call now and tell our licensed agents your situation. EBT cardholders, homeowners, seniors, and low-mileage drivers all qualify for rates most people never hear about.</h3>
-  <div class="cta-block">
-    <a href="tel:+18005550000" class="cta-white">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
-      Call Now To Find Your Lowest Rate
+    <a class="card" href="no-deposit.html">
+      <span class="tag">$0 down</span>
+      <div class="card-title">No deposit &amp; same-day coverage</div>
+      <p class="card-desc">Get covered today with $0 down and no credit check.</p>
     </a>
-    <p class="cta-white-sub"><span>Free · No credit check · </span>Licensed agents available now</p>
+    <a class="card" href="savings-v3.html">
+      <span class="tag">Save more</span>
+      <div class="card-title">Cut your rate up to 70%</div>
+      <p class="card-desc">See if you are overpaying—most drivers find a lower rate in one call.</p>
+    </a>
   </div>
-</section>
+</main>
 
 <footer>
-  <p>This is an advertorial. "$19/month" is the lowest rate reported by customers and is not guaranteed for all applicants — rates vary by state, vehicle, and driver profile. EBT and homeowner discounts are subject to carrier availability. By calling, you agree to be connected with a licensed insurance agent. The call is always free and there is no obligation to switch.</p>
-  <p style="margin-top:8px">© 2026 AutoSavingsAct.org &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a></p>
+  <p>© 2026 AutoSavingsAct.org</p>
 </footer>
 
-<div class="sticky-bar" id="stickyBar">
-  <div class="sticky-left">
-    <div class="s1">Car Insurance From $19/Month — EBT Discounts Available</div>
-    <div class="s2">Call now · <span>No credit check · Licensed agents available now</span></div>
-  </div>
-  <a href="tel:+18005550000" class="sticky-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
-    <div>Call Now — Check My Rate<span class="s-sub">Free · From $19/month</span></div>
-  </a>
-</div>
-
-<script>
-const bar = document.getElementById('stickyBar');
-const hero = document.querySelector('.hero');
-const obs = new IntersectionObserver(([e]) => {
-  bar.classList.toggle('visible', !e.isIntersecting);
-}, { threshold: 0.2 });
-obs.observe(hero);
-</script>
 </body>
 </html>

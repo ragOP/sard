@@ -132,6 +132,7 @@ header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;
 /* STICKY */
 .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:2px solid var(--green);padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:300;transform:translateY(100%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
 .sticky-bar.visible{transform:translateY(0)}
+.sticky-left{min-width:0;flex:1}
 .sticky-left .s1{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
 .sticky-left .s2{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
 .sticky-left .s2 span{color:#7DD3A8;font-weight:600}
@@ -141,8 +142,13 @@ header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;
 .sticky-btn .s-sub{font-size:10px;font-weight:500;opacity:.7;display:block}
 
 /* FOOTER */
-footer{padding:28px 24px 96px;text-align:center;font-size:11px;color:var(--muted);line-height:1.8;background:var(--gray);border-top:1px solid var(--border)}
+footer{padding:32px 24px calc(100px + env(safe-area-inset-bottom, 0px));text-align:center;font-size:12px;color:var(--muted);line-height:1.65;background:var(--gray);border-top:1px solid var(--border)}
 footer a{color:var(--muted);text-decoration:underline}
+.footer-disclaimer{max-width:min(100%,560px);margin:0 auto;text-wrap:balance}
+.footer-meta{margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:12px;font-size:11px;line-height:1.5}
+.footer-copy{color:var(--muted)}
+.footer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;column-gap:14px;row-gap:8px}
+.footer-links a{white-space:nowrap}
 
 /* SVG PHONE INLINE */
 .ph{display:inline-block;vertical-align:middle}
@@ -153,6 +159,13 @@ footer a{color:var(--muted);text-decoration:underline}
   .stat-box:nth-child(3){border-top:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08)}
   .stat-box:nth-child(4){border-top:1px solid rgba(255,255,255,0.08);border-right:none}
   .tdiv{display:none}
+  footer{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-bottom:calc(168px + env(safe-area-inset-bottom, 0px))}
+  .sticky-bar{flex-direction:column;align-items:stretch;gap:12px;padding:14px 16px calc(14px + env(safe-area-inset-bottom, 0px))}
+  .sticky-left{text-align:center}
+  .sticky-left .s1{font-size:14px;line-height:1.28}
+  .sticky-left .s2{font-size:11px;line-height:1.4;margin-top:4px}
+  .sticky-btn{width:100%;justify-content:center;box-sizing:border-box;padding:14px 16px;white-space:normal;text-align:center}
+  .sticky-btn>div{display:flex;flex-direction:column;align-items:center;gap:2px}
 }
 </style>
 </head>
@@ -359,8 +372,14 @@ footer a{color:var(--muted);text-decoration:underline}
 
 <!-- FOOTER -->
 <footer>
-  <p>This is an advertorial. Coverage availability and pricing vary by state, vehicle, and driver profile. "$19/month" represents the lowest available rate and is not guaranteed for all applicants. "$0 down" means no deposit is required beyond the first month's premium. By calling, you agree to be connected with a licensed insurance agent. The call is always free.</p>
-  <p style="margin-top:8px">© 2026 AutoSavingsAct.org &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a></p>
+  <p class="footer-disclaimer">This is an advertorial. Coverage availability and pricing vary by state, vehicle, and driver profile. "$19/month" represents the lowest available rate and is not guaranteed for all applicants. "$0 down" means no deposit is required beyond the first month's premium. By calling, you agree to be connected with a licensed insurance agent. The call is always free.</p>
+  <div class="footer-meta">
+    <span class="footer-copy">© 2026 AutoSavingsAct.org</span>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </nav>
+  </div>
 </footer>
 
 <!-- STICKY BAR -->
@@ -383,5 +402,175 @@ const obs = new IntersectionObserver(([e]) => {
 }, { threshold: 0.2 });
 obs.observe(hero);
 </script>
+
+
+
+<script>
+/* ── UTM Dynamic Keyword Insertion ── */
+(function () {
+  var raw = new URLSearchParams(window.location.search).get('utm_term') || '';
+  var k = raw.toLowerCase().trim();
+  if (!k) return;
+
+  var variants = [
+
+    /* $20 down */
+    { match: ['20 down', '$20', '20down', 'twenty dollar'],
+      tag:       'Start covered for just $20 down',
+      h1:        'Car Insurance Starting<br>With Just <span class="hi">$20 Down.</span><br>No Big Deposit Needed.',
+      sub:       'You don't need hundreds upfront. Call now and our licensed agents will get you <strong>insured today starting from just $20 down</strong> — monthly payments from $19.',
+      ctaSub:    '<span>Free · Only $20 down · </span>Licensed agents get you covered immediately',
+      sticky:    'Get Covered For Just $20 Down — From $19/Month!',
+      stickyBtn: 'Start With $20 Down' },
+
+    /* First month free */
+    { match: ['first month free', 'month free', '1st month', 'first month no'],
+      tag:       'First month free — no deposit',
+      h1:        'Car Insurance With Your<br><span class="hi">First Month Free.</span><br>No Deposit. Start Today.',
+      sub:       'Some drivers qualify for their first month free with no deposit required. Call our licensed agents now to check if <strong>you qualify — takes under 2 minutes.</strong>',
+      ctaSub:    '<span>Free to check · No deposit · </span>Licensed agents answer immediately',
+      sticky:    'First Month Free — Check If You Qualify Now!',
+      stickyBtn: 'Check First Month Free' },
+
+    /* Need now / pay later / same day */
+    { match: ['need now', 'pay later', 'right now', 'same day', 'today', 'immediate', 'instant'],
+      tag:       'Get covered today — pay later',
+      h1:        'Need Car Insurance Right Now?<br>Get Covered Today,<br><span class="hi">Pay Later. No Deposit.</span>',
+      sub:       'Don't wait. Call now and our licensed agents can get you <strong>insured in minutes</strong> — no deposit required upfront. Monthly plans from $19.',
+      ctaSub:    '<span>Free · Same-day coverage · </span>Licensed agents answer immediately',
+      sticky:    'Get Covered Today With $0 Down — From $19/Month!',
+      stickyBtn: 'Get Covered Now' },
+
+    /* Very cheap / cheapest */
+    { match: ['very cheap', 'cheapest', 'lowest price', 'super cheap', 'dirt cheap', 'cheap car'],
+      tag:       'Very cheap car insurance — no deposit',
+      h1:        'Very Cheap Car Insurance<br>With <span class="hi">No Deposit Required.</span><br>From $19/Month.',
+      sub:       'You don't need to overpay or put a big deposit down to get real coverage. Call now — our agents find <strong>the cheapest available rate for your zip code</strong> in minutes.',
+      ctaSub:    '<span>Free · No deposit · </span>Cheapest rates found immediately',
+      sticky:    'Very Cheap Car Insurance — $0 Down From $19/Month!',
+      stickyBtn: 'Find Cheapest Rate Now' },
+
+    /* No deposit + bad credit */
+    { match: ['bad credit', 'no credit', 'poor credit', 'low credit'],
+      tag:       'No deposit — bad credit is okay',
+      h1:        'Get Car Insurance With<br><span class="hi">No Deposit.</span><br>Bad Credit Is No Problem.',
+      sub:       'Bad credit shouldn't stop you from getting covered today. Our licensed agents find no-deposit car insurance options for all credit types — <strong>monthly plans from $19, no credit check required.</strong>',
+      ctaSub:    '<span>Free · No deposit · No credit check · </span>Licensed agents answer immediately',
+      sticky:    'Bad Credit — Still Get Covered With $0 Down Today!',
+      stickyBtn: 'Get Covered No Credit Check' },
+
+    /* SR-22 no deposit */
+    { match: ['sr22', 'sr-22', 'sr 22', 'dui', 'dwi', 'high risk', 'suspended'],
+      tag:       'SR-22 insurance — no deposit required',
+      h1:        'SR-22 Car Insurance<br>With <span class="hi">No Deposit.</span><br>Get Covered Today.',
+      sub:       'Need SR-22 and don't want a big deposit? Our licensed agents find SR-22 no-deposit options across dozens of carriers. <strong>Get covered today from $19/month.</strong>',
+      ctaSub:    '<span>Free · No deposit · SR-22 filing included · </span>Licensed agents answer immediately',
+      sticky:    'SR-22 Coverage With $0 Down — Call Now!',
+      stickyBtn: 'Get SR-22 No Deposit' },
+
+    /* Non-owner */
+    { match: ['non owner', 'non-owner', 'no car', 'dont own', 'don't own', 'without a car'],
+      tag:       'Non-owner car insurance — $0 down',
+      h1:        'Non-Owner Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
+      sub:       'Don't own a car but still need coverage? Our licensed agents find non-owner car insurance with no deposit required — <strong>get covered today from $19/month.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Non-owner specialists answer immediately',
+      sticky:    'Non-Owner Car Insurance — $0 Down, From $19/Month!',
+      stickyBtn: 'Get Non-Owner Coverage' },
+
+    /* Monthly / pay monthly */
+    { match: ['monthly', 'pay monthly', 'month to month', 'monthly payment'],
+      tag:       'No deposit — pay month to month',
+      h1:        'Car Insurance With No Deposit.<br><span class="hi">Just Pay Monthly.</span><br>From $19/Month.',
+      sub:       'No lump sum upfront. No big deposit. Just a simple monthly payment starting from $19. Call our licensed agents now and <strong>get covered today with $0 down.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Licensed agents get you covered immediately',
+      sticky:    'No Deposit — Just Pay Monthly From $19!',
+      stickyBtn: 'Pay Monthly From $19' },
+
+    /* California */
+    { match: ['california', ' ca '],
+      tag:       'No deposit car insurance — California',
+      h1:        'California Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
+      sub:       'CA drivers don't need a big deposit to get covered. Call our licensed California agents now and get <strong>insured today — from $19/month, no deposit required.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Licensed CA agents answer immediately',
+      sticky:    'California — Get Covered With $0 Down Today!',
+      stickyBtn: 'Get CA Coverage Now' },
+
+    /* Texas */
+    { match: ['texas', ' tx '],
+      tag:       'No deposit car insurance — Texas',
+      h1:        'Texas Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
+      sub:       'TX drivers — no big deposit needed to get covered today. Call our licensed Texas agents now and get <strong>insured immediately from $19/month.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Licensed TX agents answer immediately',
+      sticky:    'Texas — Get Covered With $0 Down Today!',
+      stickyBtn: 'Get TX Coverage Now' },
+
+    /* Illinois */
+    { match: ['illinois', ' il '],
+      tag:       'No deposit car insurance — Illinois',
+      h1:        'Illinois Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
+      sub:       'IL drivers don't need a large deposit upfront. Call our licensed Illinois agents and get <strong>covered today from $19/month — no deposit required.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Licensed IL agents answer immediately',
+      sticky:    'Illinois — Get Covered With $0 Down Today!',
+      stickyBtn: 'Get IL Coverage Now' },
+
+    /* Florida */
+    { match: ['florida', ' fl '],
+      tag:       'No deposit car insurance — Florida',
+      h1:        'Florida Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
+      sub:       'FL drivers — stop putting off coverage because of a big upfront deposit. Call our licensed Florida agents now and get <strong>insured today from $19/month, no deposit required.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Licensed FL agents answer immediately',
+      sticky:    'Florida — Get Covered With $0 Down Today!',
+      stickyBtn: 'Get FL Coverage Now' },
+
+    /* Georgia */
+    { match: ['georgia', ' ga '],
+      tag:       'No deposit car insurance — Georgia',
+      h1:        'Georgia Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
+      sub:       'GA drivers don't need a deposit to get real coverage today. Call our licensed Georgia agents — <strong>get insured from $19/month with no deposit required.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Licensed GA agents answer immediately',
+      sticky:    'Georgia — Get Covered With $0 Down Today!',
+      stickyBtn: 'Get GA Coverage Now' },
+
+    /* Arizona */
+    { match: ['arizona', ' az '],
+      tag:       'No deposit car insurance — Arizona',
+      h1:        'Arizona Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
+      sub:       'AZ drivers — get covered today without a big deposit. Our licensed Arizona agents find no-deposit plans from <strong>$19/month — call now and get insured immediately.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Licensed AZ agents answer immediately',
+      sticky:    'Arizona — Get Covered With $0 Down Today!',
+      stickyBtn: 'Get AZ Coverage Now' },
+
+    /* Online / near me */
+    { match: ['online', 'near me'],
+      tag:       'No deposit car insurance — online now',
+      h1:        'Get Car Insurance Online<br>With <span class="hi">$0 Down.</span><br>Covered In Minutes. No Deposit.',
+      sub:       'No office visit needed. Call now and our licensed agents get you <strong>fully insured today — entirely over the phone, no deposit, from $19/month.</strong>',
+      ctaSub:    '<span>Free · No deposit · </span>Licensed agents get you covered immediately',
+      sticky:    'No Deposit Car Insurance — Get Covered Online Now!',
+      stickyBtn: 'Get Covered Online Now' }
+
+  ];
+
+  var v = variants.find(function(item) {
+    return item.match.some(function(m) { return k.indexOf(m) !== -1; });
+  });
+  if (!v) return;
+
+  function setHTML(sel, html) { var el = document.querySelector(sel); if (el) el.innerHTML = html; }
+  function setStickyBtn(text) {
+    var div = document.querySelector('.sticky-btn div'); if (!div) return;
+    var sub = div.querySelector('.s-sub');
+    div.innerHTML = text + (sub ? sub.outerHTML : '');
+  }
+
+  setHTML('.hero-tag', v.tag);
+  setHTML('.hero h1', v.h1);
+  setHTML('.hero-sub', v.sub);
+  setHTML('.cta-sub-line', v.ctaSub);
+  setHTML('.sticky-bar .s1', v.sticky);
+  setStickyBtn(v.stickyBtn);
+})();
+</script>
+
 </body>
 </html>

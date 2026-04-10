@@ -114,6 +114,7 @@ header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;
 
 .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:2px solid var(--green);padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:300;transform:translateY(100%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
 .sticky-bar.visible{transform:translateY(0)}
+.sticky-left{min-width:0;flex:1}
 .sticky-left .s1{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
 .sticky-left .s2{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
 .sticky-left .s2 span{color:#7DD3A8;font-weight:600}
@@ -122,8 +123,13 @@ header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;
 .sticky-btn svg{width:15px;height:15px}
 .sticky-btn .s-sub{font-size:10px;font-weight:500;opacity:.7;display:block}
 
-footer{padding:28px 24px 96px;text-align:center;font-size:11px;color:var(--muted);line-height:1.8;background:var(--gray);border-top:1px solid var(--border)}
+footer{padding:32px 24px calc(100px + env(safe-area-inset-bottom, 0px));text-align:center;font-size:12px;color:var(--muted);line-height:1.65;background:var(--gray);border-top:1px solid var(--border)}
 footer a{color:var(--muted);text-decoration:underline}
+.footer-disclaimer{max-width:min(100%,560px);margin:0 auto;text-wrap:balance}
+.footer-meta{margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:12px;font-size:11px;line-height:1.5}
+.footer-copy{color:var(--muted)}
+.footer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;column-gap:14px;row-gap:8px}
+.footer-links a{white-space:nowrap}
 
 @media(max-width:540px){
   .stats-inner{grid-template-columns:1fr 1fr}
@@ -131,6 +137,13 @@ footer a{color:var(--muted);text-decoration:underline}
   .stat-box:nth-child(3){border-top:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08)}
   .stat-box:nth-child(4){border-top:1px solid rgba(255,255,255,0.08);border-right:none}
   .tdiv{display:none}
+  footer{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-bottom:calc(168px + env(safe-area-inset-bottom, 0px))}
+  .sticky-bar{flex-direction:column;align-items:stretch;gap:12px;padding:14px 16px calc(14px + env(safe-area-inset-bottom, 0px))}
+  .sticky-left{text-align:center}
+  .sticky-left .s1{font-size:14px;line-height:1.28}
+  .sticky-left .s2{font-size:11px;line-height:1.4;margin-top:4px}
+  .sticky-btn{width:100%;justify-content:center;box-sizing:border-box;padding:14px 16px;white-space:normal;text-align:center}
+  .sticky-btn>div{display:flex;flex-direction:column;align-items:center;gap:2px}
 }
 </style>
 </head>
@@ -346,8 +359,14 @@ footer a{color:var(--muted);text-decoration:underline}
 </section>
 
 <footer>
-  <p>This is an advertorial. "$19/month" is the lowest rate reported by customers and is not guaranteed for all applicants — rates vary by state, vehicle, and driver profile. EBT and homeowner discounts are subject to carrier availability. By calling, you agree to be connected with a licensed insurance agent. The call is always free and there is no obligation to switch.</p>
-  <p style="margin-top:8px">© 2026 AutoSavingsAct.org &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a></p>
+  <p class="footer-disclaimer">This is an advertorial. "$19/month" is the lowest rate reported by customers and is not guaranteed for all applicants — rates vary by state, vehicle, and driver profile. EBT and homeowner discounts are subject to carrier availability. By calling, you agree to be connected with a licensed insurance agent. The call is always free and there is no obligation to switch.</p>
+  <div class="footer-meta">
+    <span class="footer-copy">© 2026 AutoSavingsAct.org</span>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </nav>
+  </div>
 </footer>
 
 <div class="sticky-bar" id="stickyBar">
@@ -369,5 +388,166 @@ const obs = new IntersectionObserver(([e]) => {
 }, { threshold: 0.2 });
 obs.observe(hero);
 </script>
+
+
+
+<script>
+/* ── UTM Dynamic Keyword Insertion ── */
+(function () {
+  var raw = new URLSearchParams(window.location.search).get('utm_term') || '';
+  var k = raw.toLowerCase().trim();
+  if (!k) return;
+
+  var variants = [
+
+    /* EBT */
+    { match: ['ebt'],
+      tag:       'EBT cardholder discount — available now',
+      h1:        'EBT Cardholders Get<br><span class="hi">Special Discounts</span><br>On Car Insurance.',
+      sub:       'If you have an EBT card, you may qualify for discounted car insurance most agents won't mention. Call now — our licensed agents <strong>check your EBT eligibility in minutes.</strong>',
+      ctaSub:    '<span>Free · No credit check · </span>EBT discount checked immediately',
+      sticky:    'EBT Cardholders — Get Your Special Car Insurance Discount!',
+      stickyBtn: 'Check EBT Discount Now' },
+
+    /* SNAP */
+    { match: ['snap'],
+      tag:       'SNAP recipient discount — available now',
+      h1:        'SNAP Recipients Qualify For<br><span class="hi">Lower Car Insurance</span><br>Rates. From $19/Month.',
+      sub:       'Being on SNAP could qualify you for discounted car insurance. Call our licensed agents now — they <strong>check your SNAP eligibility in minutes</strong> and find you the lowest available rate.',
+      ctaSub:    '<span>Free · No credit check · </span>SNAP discount checked immediately',
+      sticky:    'SNAP Recipients — Get Your Car Insurance Discount Now!',
+      stickyBtn: 'Check SNAP Discount Now' },
+
+    /* Medicaid */
+    { match: ['medicaid', 'medicare', 'welfare', 'government benefit', 'food stamp'],
+      tag:       'Government benefits discount — available now',
+      h1:        'On Government Benefits?<br>You May Qualify For<br><span class="hi">Discounted Car Insurance.</span>',
+      sub:       'Receiving Medicaid, food stamps, or other government benefits could qualify you for special car insurance discounts. Our licensed agents <strong>check your eligibility in minutes — from $19/month.</strong>',
+      ctaSub:    '<span>Free · No credit check · </span>Eligibility checked immediately',
+      sticky:    'Government Benefits Holders — Check Your Car Insurance Discount!',
+      stickyBtn: 'Check My Discount Now' },
+
+    /* Low income */
+    { match: ['low income', 'low-income', 'income based', 'government assist'],
+      tag:       'Low income car insurance — available now',
+      h1:        'Car Insurance Built For<br><span class="hi">Low Income Drivers.</span><br>From $19/Month.',
+      sub:       'You shouldn't have to choose between car insurance and other bills. Our licensed agents find <strong>low income car insurance plans starting from $19/month</strong> — with discounts most agents don't offer.',
+      ctaSub:    '<span>Free · No credit check · </span>Low income rates found immediately',
+      sticky:    'Low Income Car Insurance — From $19/Month, Call Now!',
+      stickyBtn: 'Find Low Income Rate' },
+
+    /* Affordable / budget / cheap */
+    { match: ['afford', 'budget', 'cheap', 'inexpensive', 'low cost', 'low-cost', 'very cheap'],
+      tag:       'Affordable car insurance — from $19/month',
+      h1:        'Car Insurance You Can<br>Actually Afford — Starting<br>From <span class="hi">$19/Month.</span>',
+      sub:       '45,752 drivers found car insurance they could actually afford by calling our licensed agents. <strong>Monthly plans start from $19</strong> — with extra discounts for EBT, SNAP, and homeowners.',
+      ctaSub:    '<span>Free · No credit check · </span>Affordable rates found immediately',
+      sticky:    'Affordable Car Insurance — From $19/Month, Call Now!',
+      stickyBtn: 'Find Affordable Rate Now' },
+
+    /* Bad credit */
+    { match: ['bad credit', 'no credit', 'poor credit', 'low credit', 'credit check'],
+      tag:       'Bad credit — still from $19/month',
+      h1:        'Car Insurance For<br><span class="hi">Bad Credit Drivers.</span><br>From $19/Month.',
+      sub:       'Bad credit doesn't have to mean unaffordable insurance. Our licensed agents find carriers that specialize in <strong>low-cost coverage for all credit types — EBT and SNAP discounts available too.</strong>',
+      ctaSub:    '<span>Free · No credit check required · </span>Licensed agents answer immediately',
+      sticky:    'Bad Credit Drivers — Car Insurance From $19/Month!',
+      stickyBtn: 'Get Rate No Credit Check' },
+
+    /* SR-22 low income */
+    { match: ['sr22', 'sr-22', 'sr 22', 'dui', 'high risk', 'suspended'],
+      tag:       'SR-22 insurance — affordable options',
+      h1:        'Affordable SR-22 Insurance<br>For Low Income Drivers.<br>From <span class="hi">$19/Month.</span>',
+      sub:       'Need SR-22 on a tight budget? Our licensed agents find affordable SR-22 coverage across dozens of carriers — <strong>EBT and SNAP discounts may apply. Call now.</strong>',
+      ctaSub:    '<span>Free · SR-22 filing included · </span>Licensed agents answer immediately',
+      sticky:    'Affordable SR-22 Insurance — From $19/Month, Call Now!',
+      stickyBtn: 'Get Affordable SR-22' },
+
+    /* Homeowner */
+    { match: ['homeown', 'home owner', 'house'],
+      tag:       'Homeowner discount — available now',
+      h1:        'Homeowners Get Extra<br><span class="hi">Car Insurance Discounts.</span><br>From $19/Month.',
+      sub:       'Owning a home could qualify you for <strong>extra discounts on your car insurance</strong> that most agents won't tell you about. Call our licensed agents now — discount checked in minutes.',
+      ctaSub:    '<span>Free · No credit check · </span>Homeowner discount checked immediately',
+      sticky:    'Homeowners — Get Your Extra Car Insurance Discount Now!',
+      stickyBtn: 'Check Homeowner Discount' },
+
+    /* Senior / retired */
+    { match: ['senior', 'retired', 'retirement', 'over 60', 'over 65', 'fixed income'],
+      tag:       'Senior driver discount — available now',
+      h1:        'Senior Drivers On Fixed Income<br>Get <span class="hi">Special Discounts</span><br>On Car Insurance.',
+      sub:       'Retired or on a fixed income? You may qualify for senior car insurance discounts most agents don't advertise. Our licensed agents find your <strong>lowest available rate from $19/month — call now.</strong>',
+      ctaSub:    '<span>Free · No credit check · </span>Senior discount checked immediately',
+      sticky:    'Senior Drivers — Get Your Special Car Insurance Discount!',
+      stickyBtn: 'Check Senior Discount Now' },
+
+    /* Single parent */
+    { match: ['single parent', 'single mom', 'single dad', 'single mother', 'single father'],
+      tag:       'Single parent discounts — available now',
+      h1:        'Single Parents Get<br><span class="hi">Lower Car Insurance</span><br>Rates. From $19/Month.',
+      sub:       'As a single parent, every dollar counts. Our licensed agents find car insurance plans built around your budget — <strong>starting from $19/month, with discounts for EBT and SNAP cardholders.</strong>',
+      ctaSub:    '<span>Free · No credit check · </span>Licensed agents answer immediately',
+      sticky:    'Single Parents — Car Insurance From $19/Month, Call Now!',
+      stickyBtn: 'Find Single Parent Rate' },
+
+    /* California */
+    { match: ['california', ' ca '],
+      tag:       'Low income car insurance — California',
+      h1:        'California Car Insurance<br>From <span class="hi">$19/Month.</span><br>EBT &amp; SNAP Discounts Available.',
+      sub:       'CA drivers on EBT, SNAP, or low income may qualify for <strong>discounted car insurance starting from $19/month.</strong> Call our licensed California agents now to check your eligibility.',
+      ctaSub:    '<span>Free · No credit check · </span>Licensed CA agents answer immediately',
+      sticky:    'California Low Income Drivers — From $19/Month, Call Now!',
+      stickyBtn: 'Check CA Rate Now' },
+
+    /* Texas */
+    { match: ['texas', ' tx '],
+      tag:       'Low income car insurance — Texas',
+      h1:        'Texas Car Insurance<br>From <span class="hi">$19/Month.</span><br>EBT &amp; SNAP Discounts Available.',
+      sub:       'TX drivers on EBT, SNAP, or low income may qualify for <strong>discounted car insurance starting from $19/month.</strong> Call our licensed Texas agents to check your eligibility now.',
+      ctaSub:    '<span>Free · No credit check · </span>Licensed TX agents answer immediately',
+      sticky:    'Texas Low Income Drivers — From $19/Month, Call Now!',
+      stickyBtn: 'Check TX Rate Now' },
+
+    /* Florida */
+    { match: ['florida', ' fl '],
+      tag:       'Low income car insurance — Florida',
+      h1:        'Florida Car Insurance<br>From <span class="hi">$19/Month.</span><br>EBT &amp; SNAP Discounts Available.',
+      sub:       'FL drivers on EBT, SNAP, or low income may qualify for <strong>discounted car insurance starting from $19/month.</strong> Call our licensed Florida agents to check your eligibility now.',
+      ctaSub:    '<span>Free · No credit check · </span>Licensed FL agents answer immediately',
+      sticky:    'Florida Low Income Drivers — From $19/Month, Call Now!',
+      stickyBtn: 'Check FL Rate Now' },
+
+    /* Georgia */
+    { match: ['georgia', ' ga '],
+      tag:       'Low income car insurance — Georgia',
+      h1:        'Georgia Car Insurance<br>From <span class="hi">$19/Month.</span><br>EBT &amp; SNAP Discounts Available.',
+      sub:       'GA drivers on EBT, SNAP, or low income may qualify for <strong>discounted car insurance starting from $19/month.</strong> Call our licensed Georgia agents to check your eligibility now.',
+      ctaSub:    '<span>Free · No credit check · </span>Licensed GA agents answer immediately',
+      sticky:    'Georgia Low Income Drivers — From $19/Month, Call Now!',
+      stickyBtn: 'Check GA Rate Now' }
+
+  ];
+
+  var v = variants.find(function(item) {
+    return item.match.some(function(m) { return k.indexOf(m) !== -1; });
+  });
+  if (!v) return;
+
+  function setHTML(sel, html) { var el = document.querySelector(sel); if (el) el.innerHTML = html; }
+  function setStickyBtn(text) {
+    var div = document.querySelector('.sticky-btn div'); if (!div) return;
+    var sub = div.querySelector('.s-sub');
+    div.innerHTML = text + (sub ? sub.outerHTML : '');
+  }
+
+  setHTML('.hero-tag', v.tag);
+  setHTML('.hero h1', v.h1);
+  setHTML('.hero-sub', v.sub);
+  setHTML('.cta-sub-line', v.ctaSub);
+  setHTML('.sticky-bar .s1', v.sticky);
+  setStickyBtn(v.stickyBtn);
+})();
+</script>
+
 </body>
 </html>
