@@ -28,9 +28,12 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
 
 /* HEADER */
-header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06)}
-.logo{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
-.logo span{color:#7DD3A8}
+header{
+  background:#1d1f21;
+  
+  padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{display:flex;align-items:center;line-height:0}
+.logo img{display:block;height:38px;width:auto;max-width:180px;object-fit:contain}
 .hcta{display:flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:9px 18px;border-radius:99px;text-decoration:none;transition:background .15s;white-space:nowrap}
 .hcta:hover{background:#146030}
 .hcta svg{width:14px;height:14px;flex-shrink:0}
@@ -193,7 +196,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:clamp(
 
 <!-- HEADER -->
 <header>
-  <div class="logo">Auto<span>Savings</span></div>
+  <div class="logo"><img src="logo.png" alt="AutoSavings" width="180" height="40"></div>
   <a href="tel:+18005550000" class="hcta">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
     Get Covered Today
