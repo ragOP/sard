@@ -49,7 +49,23 @@ header{
 .cta-main{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:#fff;font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 42px;border-radius:99px;text-decoration:none;box-shadow:0 0 0 4px rgba(26,122,60,0.28),0 8px 32px rgba(26,122,60,0.3);transition:background .15s,transform .1s;letter-spacing:-.01em}
 .cta-main:hover{background:#146030;transform:translateY(-2px)}
 .cta-main:active{transform:translateY(0)}
-.cta-main svg{width:20px;height:20px;flex-shrink:0}
+.cta-main svg{width:20px;height:20px;flex-shrink:0;transform-origin:center;animation:call-ring-shake 2.4s ease-in-out infinite}
+@keyframes call-ring-shake{
+  0%,40%,100%{transform:rotate(0)}
+  1.5%{transform:rotate(-9deg)}
+  3%{transform:rotate(9deg)}
+  4.5%{transform:rotate(-7deg)}
+  6%{transform:rotate(7deg)}
+  7.5%{transform:rotate(0)}
+  20%{transform:rotate(-9deg)}
+  21.5%{transform:rotate(9deg)}
+  23%{transform:rotate(-7deg)}
+  24.5%{transform:rotate(7deg)}
+  26%{transform:rotate(0)}
+}
+@media (prefers-reduced-motion:reduce){
+  .cta-main svg{animation:none}
+}
 .cta-sub-line{font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:.01em}
 .cta-sub-line span{color:rgba(255,255,255,0.65);font-weight:500}
 
