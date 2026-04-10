@@ -460,13 +460,10 @@ obs.observe(document.querySelector('.hero'));
 </script>
 
 <script>
-/* ── State Dynamic Insertion ── */
+/* ■■ State Dynamic Insertion ■■ */
 (function () {
 
-  /* ── All 50 states + DC
-     avg  = average monthly rate (est.)
-     save = typical monthly saving through our agents
-  ────────────────────────────────────────────── */
+  /* ■■ All 50 states + DC — avg = average monthly rate (est.); save = typical monthly saving through our agents ■■ */
   var states = {
     'alabama':              { name:'Alabama',        abbr:'AL', avg:114, save:47 },
     'alaska':               { name:'Alaska',         abbr:'AK', avg:131, save:54 },
@@ -539,9 +536,7 @@ obs.observe(document.querySelector('.hero'));
     'wv':{ redir:'west virginia' },'wi':{ redir:'wisconsin' },'wy':{ redir:'wyoming' }
   };
 
-  /* ── Resolve state from URL
-     Checks: ?state=california  OR  ?utm_term=car+insurance+california
-  ──────────────────────────────────────────────────────────────────── */
+  /* ■■ Resolve state from URL — ?state=california OR ?utm_term=car+insurance+california ■■ */
   function getStateKey() {
     var params = new URLSearchParams(window.location.search);
 
@@ -578,7 +573,7 @@ obs.observe(document.querySelector('.hero'));
   var low   = avg - save;
   var annualSave = save * 12;
 
-  /* ── DOM updates ── */
+  /* ■■ DOM updates ■■ */
   function set(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
   function setTitle(t) { document.title = t; }
 
@@ -606,9 +601,8 @@ obs.observe(document.querySelector('.hero'));
   set('test3loc',   n + ' · Comparison sites failed him');
 
   set('bottomTag',  'Find the cheapest ' + n + ' rate — free');
-  set('bottomH2',   'Stop Overpaying.<br>Find The Cheapest Rate<br>In <span class="hi">' + n + '.</span>');
+  set('bottomH2',   'Stop Overpaying.<br>Find The Cheapest Rate<br>In <span class="hi" id="bottomState">' + n + '.</span>');
   set('bottomSub',  'One 2-minute call to our licensed ' + n + ' agents compares dozens of carriers and finds your lowest available rate — same coverage, immediately lower price.');
-  set('bottomState', n + '.');
 
   set('stickyS1',   'Find The Cheapest Rate In ' + n + ' — Call Now');
 

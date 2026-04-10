@@ -475,7 +475,7 @@ obs.observe(hero);
 
 
 <script>
-/* ── UTM Dynamic Keyword Insertion ── */
+/* ■■ UTM Dynamic Keyword Insertion ■■ */
 (function () {
   var raw = new URLSearchParams(window.location.search).get('utm_term') || '';
   var k = raw.toLowerCase().trim();
@@ -487,7 +487,7 @@ obs.observe(hero);
     { match: ['20 down', '$20', '20down', 'twenty dollar'],
       tag:       'Start covered for just $20 down',
       h1:        'Car Insurance Starting<br>With Just <span class="hi">$20 Down.</span><br>No Big Deposit Needed.',
-      sub:       'You don't need hundreds upfront. Call now and our licensed agents will get you <strong>insured today starting from just $20 down</strong> — monthly payments from $19.',
+      sub:       'You don\'t need hundreds upfront. Call now and our licensed agents will get you <strong>insured today starting from just $20 down</strong> — monthly payments from $19.',
       ctaSub:    '<span>Free · Only $20 down · </span>Licensed agents get you covered immediately',
       sticky:    'Get Covered For Just $20 Down — From $19/Month!',
       stickyBtn: 'Start With $20 Down' },
@@ -505,7 +505,7 @@ obs.observe(hero);
     { match: ['need now', 'pay later', 'right now', 'same day', 'today', 'immediate', 'instant'],
       tag:       'Get covered today — pay later',
       h1:        'Need Car Insurance Right Now?<br>Get Covered Today,<br><span class="hi">Pay Later. No Deposit.</span>',
-      sub:       'Don't wait. Call now and our licensed agents can get you <strong>insured in minutes</strong> — no deposit required upfront. Monthly plans from $19.',
+      sub:       'Don\'t wait. Call now and our licensed agents can get you <strong>insured in minutes</strong> — no deposit required upfront. Monthly plans from $19.',
       ctaSub:    '<span>Free · Same-day coverage · </span>Licensed agents answer immediately',
       sticky:    'Get Covered Today With $0 Down — From $19/Month!',
       stickyBtn: 'Get Covered Now' },
@@ -514,7 +514,7 @@ obs.observe(hero);
     { match: ['very cheap', 'cheapest', 'lowest price', 'super cheap', 'dirt cheap', 'cheap car'],
       tag:       'Very cheap car insurance — no deposit',
       h1:        'Very Cheap Car Insurance<br>With <span class="hi">No Deposit Required.</span><br>From $19/Month.',
-      sub:       'You don't need to overpay or put a big deposit down to get real coverage. Call now — our agents find <strong>the cheapest available rate for your zip code</strong> in minutes.',
+      sub:       'You don\'t need to overpay or put a big deposit down to get real coverage. Call now — our agents find <strong>the cheapest available rate for your zip code</strong> in minutes.',
       ctaSub:    '<span>Free · No deposit · </span>Cheapest rates found immediately',
       sticky:    'Very Cheap Car Insurance — $0 Down From $19/Month!',
       stickyBtn: 'Find Cheapest Rate Now' },
@@ -523,7 +523,7 @@ obs.observe(hero);
     { match: ['bad credit', 'no credit', 'poor credit', 'low credit'],
       tag:       'No deposit — bad credit is okay',
       h1:        'Get Car Insurance With<br><span class="hi">No Deposit.</span><br>Bad Credit Is No Problem.',
-      sub:       'Bad credit shouldn't stop you from getting covered today. Our licensed agents find no-deposit car insurance options for all credit types — <strong>monthly plans from $19, no credit check required.</strong>',
+      sub:       'Bad credit shouldn\'t stop you from getting covered today. Our licensed agents find no-deposit car insurance options for all credit types — <strong>monthly plans from $19, no credit check required.</strong>',
       ctaSub:    '<span>Free · No deposit · No credit check · </span>Licensed agents answer immediately',
       sticky:    'Bad Credit — Still Get Covered With $0 Down Today!',
       stickyBtn: 'Get Covered No Credit Check' },
@@ -532,16 +532,16 @@ obs.observe(hero);
     { match: ['sr22', 'sr-22', 'sr 22', 'dui', 'dwi', 'high risk', 'suspended'],
       tag:       'SR-22 insurance — no deposit required',
       h1:        'SR-22 Car Insurance<br>With <span class="hi">No Deposit.</span><br>Get Covered Today.',
-      sub:       'Need SR-22 and don't want a big deposit? Our licensed agents find SR-22 no-deposit options across dozens of carriers. <strong>Get covered today from $19/month.</strong>',
+      sub:       'Need SR-22 and don\'t want a big deposit? Our licensed agents find SR-22 no-deposit options across dozens of carriers. <strong>Get covered today from $19/month.</strong>',
       ctaSub:    '<span>Free · No deposit · SR-22 filing included · </span>Licensed agents answer immediately',
       sticky:    'SR-22 Coverage With $0 Down — Call Now!',
       stickyBtn: 'Get SR-22 No Deposit' },
 
     /* Non-owner */
-    { match: ['non owner', 'non-owner', 'no car', 'dont own', 'don't own', 'without a car'],
+    { match: ['non owner', 'non-owner', 'no car', 'dont own', 'don\'t own', 'without a car'],
       tag:       'Non-owner car insurance — $0 down',
       h1:        'Non-Owner Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
-      sub:       'Don't own a car but still need coverage? Our licensed agents find non-owner car insurance with no deposit required — <strong>get covered today from $19/month.</strong>',
+      sub:       'Don\'t own a car but still need coverage? Our licensed agents find non-owner car insurance with no deposit required — <strong>get covered today from $19/month.</strong>',
       ctaSub:    '<span>Free · No deposit · </span>Non-owner specialists answer immediately',
       sticky:    'Non-Owner Car Insurance — $0 Down, From $19/Month!',
       stickyBtn: 'Get Non-Owner Coverage' },
@@ -559,7 +559,7 @@ obs.observe(hero);
     { match: ['california', ' ca '],
       tag:       'No deposit car insurance — California',
       h1:        'California Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
-      sub:       'CA drivers don't need a big deposit to get covered. Call our licensed California agents now and get <strong>insured today — from $19/month, no deposit required.</strong>',
+      sub:       'CA drivers don\'t need a big deposit to get covered. Call our licensed California agents now and get <strong>insured today — from $19/month, no deposit required.</strong>',
       ctaSub:    '<span>Free · No deposit · </span>Licensed CA agents answer immediately',
       sticky:    'California — Get Covered With $0 Down Today!',
       stickyBtn: 'Get CA Coverage Now' },
@@ -577,7 +577,7 @@ obs.observe(hero);
     { match: ['illinois', ' il '],
       tag:       'No deposit car insurance — Illinois',
       h1:        'Illinois Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
-      sub:       'IL drivers don't need a large deposit upfront. Call our licensed Illinois agents and get <strong>covered today from $19/month — no deposit required.</strong>',
+      sub:       'IL drivers don\'t need a large deposit upfront. Call our licensed Illinois agents and get <strong>covered today from $19/month — no deposit required.</strong>',
       ctaSub:    '<span>Free · No deposit · </span>Licensed IL agents answer immediately',
       sticky:    'Illinois — Get Covered With $0 Down Today!',
       stickyBtn: 'Get IL Coverage Now' },
@@ -595,7 +595,7 @@ obs.observe(hero);
     { match: ['georgia', ' ga '],
       tag:       'No deposit car insurance — Georgia',
       h1:        'Georgia Car Insurance<br>With <span class="hi">$0 Down.</span><br>Pay Monthly. No Deposit.',
-      sub:       'GA drivers don't need a deposit to get real coverage today. Call our licensed Georgia agents — <strong>get insured from $19/month with no deposit required.</strong>',
+      sub:       'GA drivers don\'t need a deposit to get real coverage today. Call our licensed Georgia agents — <strong>get insured from $19/month with no deposit required.</strong>',
       ctaSub:    '<span>Free · No deposit · </span>Licensed GA agents answer immediately',
       sticky:    'Georgia — Get Covered With $0 Down Today!',
       stickyBtn: 'Get GA Coverage Now' },

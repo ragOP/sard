@@ -948,7 +948,7 @@ obs.observe(hero);
 
 
 <script>
-/* ── UTM Dynamic Keyword Insertion ── */
+/* ■■ UTM Dynamic Keyword Insertion ■■ */
 (function () {
   var raw = new URLSearchParams(window.location.search).get('utm_term') || '';
   var k = raw.toLowerCase().trim();
@@ -960,7 +960,7 @@ obs.observe(hero);
     { match: ['california', ' ca '],
       tag:       'Auto insurance alert — California 2026',
       h1:        'Most California Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
-      sub:       'Your CA insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One 2-minute call to our licensed agents finds out exactly how much you're overpaying.',
+      sub:       'Your CA insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One 2-minute call to our licensed agents finds out exactly how much you\'re overpaying.',
       ctaSub:    '<span>Free · No commitment · </span>Licensed CA agents answer immediately',
       sticky:    'California Drivers — Pay Up To 70% Less On Car Insurance!',
       stickyBtn: 'Drop My CA Rate Now' },
@@ -969,7 +969,7 @@ obs.observe(hero);
     { match: ['texas', ' tx '],
       tag:       'Auto insurance alert — Texas 2026',
       h1:        'Most Texas Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
-      sub:       'Your TX insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One call to our licensed Texas agents reveals exactly how much you've been overpaying.',
+      sub:       'Your TX insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One call to our licensed Texas agents reveals exactly how much you\'ve been overpaying.',
       ctaSub:    '<span>Free · No commitment · </span>Licensed TX agents answer immediately',
       sticky:    'Texas Drivers — Pay Up To 70% Less On Car Insurance!',
       stickyBtn: 'Drop My TX Rate Now' },
@@ -987,7 +987,7 @@ obs.observe(hero);
     { match: ['new york', ' ny '],
       tag:       'Auto insurance alert — New York 2026',
       h1:        'Most New York Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
-      sub:       'NY drivers pay some of the highest insurance rates in the country. One 2-minute call to our licensed agents checks if you're one of the thousands <strong>massively overpaying.</strong>',
+      sub:       'NY drivers pay some of the highest insurance rates in the country. One 2-minute call to our licensed agents checks if you\'re one of the thousands <strong>massively overpaying.</strong>',
       ctaSub:    '<span>Free · No commitment · </span>Licensed NY agents answer immediately',
       sticky:    'New York Drivers — Pay Up To 70% Less On Car Insurance!',
       stickyBtn: 'Drop My NY Rate Now' },
@@ -1021,9 +1021,9 @@ obs.observe(hero);
 
     /* Overpaying / overcharged */
     { match: ['overpay', 'overcharg', 'too much', 'paying too'],
-      tag:       'You're probably being overcharged',
+      tag:       'You\'re probably being overcharged',
       h1:        'Your Insurer Has Been Quietly<br>Raising Your Rate.<br><span class="pct">Fix It In One Call.</span>',
-      sub:       'Insurance companies count on you not checking. One 2-minute call to our licensed agents compares your rate against dozens of carriers and shows you exactly how much you've been overpaying.',
+      sub:       'Insurance companies count on you not checking. One 2-minute call to our licensed agents compares your rate against dozens of carriers and shows you exactly how much you\'ve been overpaying.',
       ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
       sticky:    'Stop Overpaying — Cut Your Rate By Up To 70% Today!',
       stickyBtn: 'Stop Overpaying Now' },
@@ -1058,17 +1058,17 @@ obs.observe(hero);
     /* Renewal */
     { match: ['renew', 'renewal', 'expir'],
       tag:       'Before you renew — read this',
-      h1:        'Don't Renew Until You Check<br>If You're Being Overcharged.<br><span class="pct">Save Up To 70% In One Call.</span>',
-      sub:       'Renewal time is when insurers quietly hike your rate. Before you auto-renew, one 2-minute call to our licensed agents compares what you're about to pay against dozens of better options.',
+      h1:        'Don\'t Renew Until You Check<br>If You\'re Being Overcharged.<br><span class="pct">Save Up To 70% In One Call.</span>',
+      sub:       'Renewal time is when insurers quietly hike your rate. Before you auto-renew, one 2-minute call to our licensed agents compares what you\'re about to pay against dozens of better options.',
       ctaSub:    '<span>Free · No commitment · </span>Takes under 2 minutes',
-      sticky:    'Don't Auto-Renew — You Could Be Paying 70% Too Much!',
+      sticky:    'Don\'t Auto-Renew — You Could Be Paying 70% Too Much!',
       stickyBtn: 'Check Before Renewing' },
 
     /* Bad credit */
     { match: ['bad credit', 'no credit', 'poor credit', 'credit check', 'low credit'],
       tag:       'Bad credit? You can still save big',
       h1:        'Bad Credit Drivers Still Cut<br>Their Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
-      sub:       'Your credit score doesn't have to mean high insurance rates forever. Our licensed agents compare carriers that specialize in <strong>lower rates for bad credit drivers</strong> — one call finds your best option.',
+      sub:       'Your credit score doesn\'t have to mean high insurance rates forever. Our licensed agents compare carriers that specialize in <strong>lower rates for bad credit drivers</strong> — one call finds your best option.',
       ctaSub:    '<span>Free · No credit check · </span>Licensed agents answer immediately',
       sticky:    'Bad Credit Drivers — Still Cut Your Rate By Up To 70%!',
       stickyBtn: 'Check My Rate Now' },
@@ -1077,7 +1077,7 @@ obs.observe(hero);
     { match: ['sr22', 'sr-22', 'sr 22', 'dui', 'dwi', 'suspended license', 'high risk'],
       tag:       'SR-22 insurance — affordable options',
       h1:        'Need SR-22 Insurance?<br>Cut Your Rate By Up To<br><span class="pct">70% — One Call Away.</span>',
-      sub:       'SR-22 doesn't have to mean unaffordable. Our licensed agents find SR-22 coverage across dozens of carriers and most drivers are <strong>shocked at how much lower their rate can be.</strong>',
+      sub:       'SR-22 doesn\'t have to mean unaffordable. Our licensed agents find SR-22 coverage across dozens of carriers and most drivers are <strong>shocked at how much lower their rate can be.</strong>',
       ctaSub:    '<span>Free · SR-22 filing included · </span>Licensed agents answer immediately',
       sticky:    'SR-22 Drivers — Cut Your Rate By Up To 70% Today!',
       stickyBtn: 'Get SR-22 Rate Now' },
@@ -1095,7 +1095,7 @@ obs.observe(hero);
     { match: ['young driver', 'new driver', 'teen', 'student', '18 year', '19 year', '20 year', '21 year', 'first time'],
       tag:       'Young drivers — big savings available',
       h1:        'Young Drivers Are Cutting<br>Their Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
-      sub:       'New and young drivers don't have to accept sky-high rates. Our licensed agents compare dozens of carriers and find options specifically suited for <strong>young drivers — often far cheaper than expected.</strong>',
+      sub:       'New and young drivers don\'t have to accept sky-high rates. Our licensed agents compare dozens of carriers and find options specifically suited for <strong>young drivers — often far cheaper than expected.</strong>',
       ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
       sticky:    'Young Drivers — Cut Your Rate By Up To 70% Today!',
       stickyBtn: 'Get Young Driver Rate' },
