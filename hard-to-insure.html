@@ -28,26 +28,39 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
 
 /* HEADER */
-header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06)}
-.logo{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}.logo span{color:#7DD3A8}
+header{
+  background:#1d1f21;
+  
+  padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{display:flex;align-items:center;line-height:0}
+.logo img{display:block;height:38px;width:auto;max-width:180px;object-fit:contain}
 .hcta{display:flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:9px 18px;border-radius:99px;text-decoration:none;transition:background .15s;white-space:nowrap}
 .hcta:hover{background:#146030}
 .hcta svg{width:14px;height:14px;flex-shrink:0}
 
 /* HERO */
-.hero{background:var(--navy);padding:64px 24px 60px;text-align:center}
+.hero{background:var(--navy);padding:34px 24px 60px;text-align:center}
 .hero-tag{display:inline-block;background:rgba(125,211,168,0.12);color:#7DD3A8;border:1px solid rgba(125,211,168,0.25);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:26px}
 .hero h1{font-size:clamp(28px,5vw,50px);font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.025em;max-width:720px;margin:0 auto 20px}
 .hero h1 .hi{color:#7DD3A8}
-.hero-sub{font-size:clamp(15px,2vw,17px);color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 40px;line-height:1.7}
+.hero-sub{font-size:clamp(15px,2vw,17px);color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 22px;line-height:1.7}
 .hero-sub strong{color:rgba(255,255,255,0.9);font-weight:600}
 .cta-block{display:flex;flex-direction:column;align-items:center;gap:10px}
-.cta-main{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:#fff;font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 42px;border-radius:99px;text-decoration:none;box-shadow:0 0 0 4px rgba(26,122,60,0.28),0 8px 32px rgba(26,122,60,0.3);transition:background .15s,transform .1s;letter-spacing:-.01em}
+.cta-main{display:inline-flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap;white-space:nowrap;background:var(--green);color:#fff;font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 42px;border-radius:99px;text-decoration:none;box-shadow:0 0 0 4px rgba(26,122,60,0.28),0 8px 32px rgba(26,122,60,0.3);transition:background .15s,transform .1s;letter-spacing:-.01em;max-width:100%;box-sizing:border-box}
 .cta-main:hover{background:#146030;transform:translateY(-2px)}
 .cta-main:active{transform:translateY(0)}
-.cta-main svg{width:20px;height:20px;flex-shrink:0}
+.cta-main svg{width:20px;height:20px;flex-shrink:0;transform-origin:center;animation:call-ring-shake .52s ease-in-out infinite alternate}
+@keyframes call-ring-shake{from{transform:rotate(-8deg) translateX(-0.5px)}to{transform:rotate(8deg) translateX(0.5px)}}
+@media (prefers-reduced-motion:reduce){.cta-main svg{animation:none}}
+@media (max-width:400px){.cta-main{font-size:clamp(14px,4.2vw,19px);padding:17px 28px;gap:10px}.cta-main svg{width:18px;height:18px}}
 .cta-sub-line{font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:.01em}
 .cta-sub-line span{color:rgba(255,255,255,0.65);font-weight:500}
+.hero-scroll-hint{display:flex;justify-content:center;align-items:center;margin:0 auto 20px;color:rgba(255,255,255,0.45);text-decoration:none;-webkit-tap-highlight-color:transparent}
+.hero-scroll-hint:hover,.hero-scroll-hint:focus-visible{color:#7DD3A8}
+.hero-scroll-hint svg{width:28px;height:28px;display:block;animation:hero-arrow-bounce 1.15s ease-in-out infinite}
+@keyframes hero-arrow-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){.hero-scroll-hint svg{animation:none}}
+#below-hero{scroll-margin-top:88px}
 
 /* TRUST STRIP */
 .trust-strip{background:var(--navy2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:16px 24px}
@@ -120,10 +133,15 @@ header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;
 .btag{display:inline-block;background:rgba(125,211,168,0.12);color:#7DD3A8;border:1px solid rgba(125,211,168,0.2);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:24px}
 .bottom-cta h2{font-size:clamp(26px,4.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px;position:relative}
 .bottom-cta h2 .hi{color:#7DD3A8}
-.bottom-cta h3{font-size:clamp(15px,2vw,18px);font-weight:500;color:rgba(255,255,255,0.55);margin-bottom:36px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.65;position:relative}
-.cta-white{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--navy);font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 44px;border-radius:99px;text-decoration:none;box-shadow:0 8px 36px rgba(0,0,0,0.25);transition:transform .1s,box-shadow .15s;letter-spacing:-.01em;position:relative}
+.bottom-cta h3{font-size:clamp(15px,2vw,18px);font-weight:500;color:rgba(255,255,255,0.55);margin-bottom:18px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.65;position:relative}
+.bottom-cta-arrow{display:flex;justify-content:center;align-items:center;margin:0 auto 20px;color:rgba(255,255,255,0.45);pointer-events:none}
+.bottom-cta-arrow svg{width:28px;height:28px;display:block;animation:hero-arrow-bounce 1.15s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.bottom-cta-arrow svg{animation:none}}
+.cta-white{display:inline-flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap;white-space:nowrap;background:#fff;color:var(--navy);font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 44px;border-radius:99px;text-decoration:none;box-shadow:0 8px 36px rgba(0,0,0,0.25);transition:transform .1s,box-shadow .15s;letter-spacing:-.01em;position:relative;max-width:100%;box-sizing:border-box}
 .cta-white:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-.cta-white svg{width:20px;height:20px;color:var(--green);flex-shrink:0}
+.cta-white svg{width:20px;height:20px;flex-shrink:0;color:currentColor;transform-origin:center;animation:call-ring-shake .52s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.cta-white svg{animation:none}}
+@media (max-width:400px){.cta-white{font-size:clamp(14px,4.2vw,19px);padding:17px 28px;gap:10px}.cta-white svg{width:18px;height:18px}}
 .cta-white-sub{font-size:13px;color:rgba(255,255,255,0.38);margin-top:14px;position:relative}
 .cta-white-sub span{color:rgba(255,255,255,0.6)}
 
@@ -155,9 +173,9 @@ footer a{color:var(--muted);text-decoration:underline}
 
 <!-- HEADER -->
 <header>
-  <div class="logo">Auto<span>Savings</span></div>
+  <div class="logo"><img src="logo.png" alt="AutoSavings" width="180" height="40"></div>
   <a href="tel:+18005550000" class="hcta">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.212 1.42 1.96 1.42 1.96V19.5a3 3 0 01-3 3h-1.5C8.385 21.75 2.25 15.615 2.25 8.25V6.75a3 3 0 013-3H4.5z" clip-rule="evenodd"/></svg>
     Call Free Now
   </a>
 </header>
@@ -169,9 +187,12 @@ footer a{color:var(--muted);text-decoration:underline}
   <p class="hero-sub" id="heroSub">
     DUI, SR-22, bad credit, suspended license, lapsed policy — most companies turn you away or charge you a fortune. Our licensed agents specialize in <strong>finding coverage for exactly your situation.</strong>
   </p>
+  <a href="#below-hero" class="hero-scroll-hint" aria-label="Scroll to rates and details">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </a>
   <div class="cta-block">
     <a href="tel:+18005550000" class="cta-main">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.212 1.42 1.96 1.42 1.96V19.5a3 3 0 01-3 3h-1.5C8.385 21.75 2.25 15.615 2.25 8.25V6.75a3 3 0 013-3H4.5z" clip-rule="evenodd"/></svg>
       Call Now To Drop Your Rate
     </a>
     <p class="cta-sub-line" id="ctaSub"><span>Free · No judgment · </span>Licensed agents answer immediately</p>
@@ -179,7 +200,7 @@ footer a{color:var(--muted);text-decoration:underline}
 </section>
 
 <!-- TRUST STRIP -->
-<div class="trust-strip">
+<div class="trust-strip" id="below-hero">
   <div class="ts-inner">
     <div class="ti"><div class="tic">✓</div>No situation turned away</div>
     <div class="tdiv"></div>
@@ -365,9 +386,12 @@ footer a{color:var(--muted);text-decoration:underline}
   <div class="btag" id="bottomTag">Coverage available — call now</div>
   <h2 id="bottomH2">Others Said No.<br>We Find Coverage<br><span class="hi">For Your Situation.</span></h2>
   <h3 id="bottomSub">No matter what's on your record — DUI, bad credit, lapsed policy, SR-22 — our licensed agents find carriers that will cover you. Most get covered the same day they call.</h3>
+  <div class="bottom-cta-arrow" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+  </div>
   <div class="cta-block">
     <a href="tel:+18005550000" class="cta-white">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.212 1.42 1.96 1.42 1.96V19.5a3 3 0 01-3 3h-1.5C8.385 21.75 2.25 15.615 2.25 8.25V6.75a3 3 0 013-3H4.5z" clip-rule="evenodd"/></svg>
       Call Now To Drop Your Rate
     </a>
     <p class="cta-white-sub"><span>Free · No judgment · </span>Licensed agents answer immediately</p>
@@ -387,7 +411,7 @@ footer a{color:var(--muted);text-decoration:underline}
     <div class="s2">Free call · <span>No situation turned away · Licensed agents now</span></div>
   </div>
   <a href="tel:+18005550000" class="sticky-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.212 1.42 1.96 1.42 1.96V19.5a3 3 0 01-3 3h-1.5C8.385 21.75 2.25 15.615 2.25 8.25V6.75a3 3 0 013-3H4.5z" clip-rule="evenodd"/></svg>
     <div>Call Now To Drop Your Rate<span class="s-sub">Free · No obligation</span></div>
   </a>
 </div>
