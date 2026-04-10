@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing links — preview by category</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0d2447;
+  --navy2: #162f58;
+  --green: #1a7a3c;
+  --border: #e2e8ef;
+  --text: #0f172a;
+  --mid: #475569;
+  --muted: #94a3b8;
+  --bg: #f7f8fa;
+  --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+header h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+header p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  max-width: 420px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) 1fr;
+  flex: 1;
+  min-height: 0;
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.cat-panel {
+  background: #fff;
+  border-right: 1px solid var(--border);
+  padding: 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 56px);
+}
+@media (max-width: 900px) {
+  .cat-panel {
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+.cat-panel h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.cat-list { display: flex; flex-direction: column; gap: 4px; }
+.cat-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.cat-btn:hover { border-color: #c8e6d4; background: #f0f9f4; }
+.cat-btn[aria-current="true"] {
+  border-color: var(--green);
+  background: #f0f9f4;
+  color: var(--navy2);
+}
+.cat-btn small {
+  display: block;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 2px;
+}
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #e8ecf0;
+}
+.slideshow-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+.slideshow-toolbar .label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-right: auto;
+}
+.slideshow-toolbar .counter {
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.btn {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  color: var(--text);
+}
+.btn:hover { background: var(--bg); }
+.btn-primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+.btn-primary:hover { background: #146030; }
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.auto-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--mid);
+}
+.auto-wrap input { accent-color: var(--green); }
+.preview-wrap {
+  flex: 1;
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+.preview-frame {
+  flex: 1;
+  border: none;
+  width: 100%;
+  min-height: 50vh;
+  background: #fff;
+}
+.preview-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.85);
+  font-size: 13px;
+  color: var(--mid);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.preview-loading.show { opacity: 1; }
+.link-row {
+  padding: 10px 16px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.link-row a {
+  font-size: 12px;
+  color: var(--green);
+  word-break: break-all;
+  font-weight: 500;
+}
+.link-row a:hover { text-decoration: underline; }
+.link-list-section {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  max-height: 200px;
+  overflow-y: auto;
+}
+.link-list-section h3 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 16px 6px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+.link-list {
+  list-style: none;
+  padding: 0 8px 12px;
+}
+.link-list li {
+  border-bottom: 1px solid var(--border);
+}
+.link-list li:last-child { border-bottom: none; }
+.link-list button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--navy2);
+  cursor: pointer;
+  border-radius: 6px;
+}
+.link-list button:hover { background: var(--bg); }
+.link-list button[aria-current="true"] {
+  background: #f0f9f4;
+  font-weight: 600;
+}
+kbd {
+  font-size: 10px;
+  padding: 2px 5px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Landing page URLs</h1>
+    <p>Click a category, then use the slideshow or the list. Preview uses local copies of each HTML file. Open live URL in a new tab from the link below the preview.</p>
+  </div>
+</header>
+<div class="layout">
+  <aside class="cat-panel" aria-label="Categories">
+    <h2>Category</h2>
+    <div class="cat-list" id="cat-list"></div>
+  </aside>
+  <section class="main-panel" aria-label="Preview slideshow">
+    <div class="slideshow-toolbar">
+      <span class="label" id="slide-title">—</span>
+      <span class="counter" id="slide-counter"></span>
+      <label class="auto-wrap">
+        <input type="checkbox" id="auto-advance" />
+        Auto-advance (6s)
+      </label>
+      <button type="button" class="btn" id="btn-prev" aria-label="Previous variant">← Prev</button>
+      <button type="button" class="btn btn-primary" id="btn-next" aria-label="Next variant">Next →</button>
+      <span style="font-size:11px;color:var(--muted);"><kbd>←</kbd> <kbd>→</kbd></span>
+    </div>
+    <div class="preview-wrap">
+      <div class="preview-loading" id="preview-loading" aria-hidden="true">Loading preview…</div>
+      <iframe class="preview-frame" id="preview-frame" title="Page preview" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+    </div>
+    <div class="link-row">
+      <strong style="font-size:12px;color:var(--mid);">Live URL:</strong>
+      <a id="live-link" href="#" target="_blank" rel="noopener noreferrer">—</a>
+    </div>
+    <div class="link-list-section">
+      <h3>All links in this category</h3>
+      <ul class="link-list" id="link-list"></ul>
+    </div>
+  </section>
+</div>
+<script>
+(function () {
+  var CATEGORIES = [
+    {
+      id: 'no-deposit',
+      title: 'No deposit',
+      file: 'no-deposit.html',
+      urls: [
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=20+down+car+insurance',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=first+month+free+no+deposit',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=same+day+car+insurance+no+deposit',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=cheapest+car+insurance+no+deposit',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=bad+credit+no+deposit+car+insurance',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=sr22+no+deposit',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=non+owner+car+insurance',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=pay+monthly+no+deposit',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=illinois+no+deposit+car+insurance',
+        'https://www.autoinsurancehotline.org/no-deposit.html?utm_term=car+insurance+online+no+deposit'
+      ]
+    },
+    {
+      id: 'savings-v3',
+      title: 'Savings v3',
+      file: 'savings-v3.html',
+      urls: [
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=california+cheap+car+insurance',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=new+york+auto+insurance+rates',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=overpaying+car+insurance',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=switch+car+insurance+save+money',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=compare+car+insurance+rates',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=local+car+insurance+near+me',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=renewal+car+insurance+rate+increase',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=bad+credit+car+insurance+quotes',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=sr22+cheap+insurance',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=liability+only+cheap',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=teen+driver+car+insurance',
+        'https://www.autoinsurancehotline.org/savings-v3.html?utm_term=pay+monthly+car+insurance'
+      ]
+    },
+    {
+      id: 'low-income-ebt',
+      title: 'Low income / EBT',
+      file: 'low-income-ebt.html',
+      urls: [
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=snap+car+insurance',
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=medicaid+car+insurance+discount',
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=low+income+car+insurance',
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=affordable+car+insurance+19+dollars',
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=cheap+car+insurance+bad+credit',
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=homeowner+car+insurance+discount',
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=senior+fixed+income+insurance',
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=single+mom+cheap+car+insurance',
+        'https://www.autoinsurancehotline.org/low-income-ebt.html?utm_term=georgia+ebt+car+insurance'
+      ]
+    },
+    {
+      id: 'state',
+      title: 'State (utm or state=)',
+      file: 'state.html',
+      urls: [
+        'https://www.autoinsurancehotline.org/state.html?utm_term=cheapest+car+insurance+ohio',
+        'https://www.autoinsurancehotline.org/state.html?utm_term=arizona+cheap+auto+insurance',
+        'https://www.autoinsurancehotline.org/state.html?utm_term=new+york+car+insurance+rates',
+        'https://www.autoinsurancehotline.org/state.html?utm_term=north+carolina+cheap+insurance',
+        'https://www.autoinsurancehotline.org/state.html?state=texas',
+        'https://www.autoinsurancehotline.org/state.html?state=new+york'
+      ]
+    },
+    {
+      id: 'demographics',
+      title: 'Demographics',
+      file: 'demographics.html',
+      urls: [
+        'https://www.autoinsurancehotline.org/demographics.html?utm_term=senior+car+insurance+discount',
+        'https://www.autoinsurancehotline.org/demographics.html?utm_term=teen+driver+cheap+insurance',
+        'https://www.autoinsurancehotline.org/demographics.html?utm_term=teacher+car+insurance+discount',
+        'https://www.autoinsurancehotline.org/demographics.html?utm_term=nurse+healthcare+worker+insurance',
+        'https://www.autoinsurancehotline.org/demographics.html?utm_term=military+veteran+car+insurance'
+      ]
+    },
+    {
+      id: 'hard-to-insure',
+      title: 'Hard to insure',
+      file: 'hard-to-insure.html',
+      urls: [
+        'https://www.autoinsurancehotline.org/hard-to-insure.html?utm_term=dui+car+insurance',
+        'https://www.autoinsurancehotline.org/hard-to-insure.html?utm_term=suspended+license+insurance',
+        'https://www.autoinsurancehotline.org/hard-to-insure.html?utm_term=lapsed+car+insurance',
+        'https://www.autoinsurancehotline.org/hard-to-insure.html?utm_term=no+ssn+car+insurance+itin',
+        'https://www.autoinsurancehotline.org/hard-to-insure.html?utm_term=bad+credit+high+risk+insurance'
+      ]
+    },
+    {
+      id: 'coverage-types',
+      title: 'Coverage types',
+      file: 'coverage-types.html',
+      urls: [
+        'https://www.autoinsurancehotline.org/coverage-types.html?utm_term=full+coverage+car+insurance',
+        'https://www.autoinsurancehotline.org/coverage-types.html?utm_term=collision+coverage+cheap',
+        'https://www.autoinsurancehotline.org/coverage-types.html?utm_term=comprehensive+coverage',
+        'https://www.autoinsurancehotline.org/coverage-types.html?utm_term=gap+insurance+car',
+        'https://www.autoinsurancehotline.org/coverage-types.html?utm_term=state+minimum+liability+cheap'
+      ]
+    },
+    {
+      id: 'urgency-bundles',
+      title: 'Urgency / bundles',
+      file: 'urgency-bundles.html',
+      urls: [
+        'https://www.autoinsurancehotline.org/urgency-bundles.html?utm_term=same+day+car+insurance',
+        'https://www.autoinsurancehotline.org/urgency-bundles.html?utm_term=multi+car+insurance+discount',
+        'https://www.autoinsurancehotline.org/urgency-bundles.html?utm_term=low+mileage+car+insurance',
+        'https://www.autoinsurancehotline.org/urgency-bundles.html?utm_term=renters+and+auto+bundle'
+      ]
+    }
+  ];
+
+  function toLocalPreview(remoteUrl) {
+    try {
+      var u = new URL(remoteUrl);
+      var name = u.pathname.split('/').pop() || '';
+      return './' + name + u.search;
+    } catch (e) {
+      return remoteUrl;
+    }
+  }
+
+  function humanLabel(remoteUrl) {
+    try {
+      var u = new URL(remoteUrl);
+      var term = u.searchParams.get('utm_term');
+      if (term) return decodeURIComponent(term.replace(/\+/g, ' '));
+      var st = u.searchParams.get('state');
+      if (st) return 'state=' + decodeURIComponent(st.replace(/\+/g, ' '));
+      return u.search || 'default';
+    } catch (e) {
+      return remoteUrl;
+    }
+  }
+
+  var catIndex = 0;
+  var slideIndex = 0;
+  var autoTimer = null;
+
+  var catListEl = document.getElementById('cat-list');
+  var slideTitleEl = document.getElementById('slide-title');
+  var slideCounterEl = document.getElementById('slide-counter');
+  var frameEl = document.getElementById('preview-frame');
+  var loadingEl = document.getElementById('preview-loading');
+  var liveLinkEl = document.getElementById('live-link');
+  var linkListEl = document.getElementById('link-list');
+  var btnPrev = document.getElementById('btn-prev');
+  var btnNext = document.getElementById('btn-next');
+  var autoAdvance = document.getElementById('auto-advance');
+
+  function currentCat() {
+    return CATEGORIES[catIndex];
+  }
+
+  function clearAuto() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  function scheduleAuto() {
+    clearAuto();
+    if (!autoAdvance.checked) return;
+    autoTimer = setInterval(function () {
+      var cat = currentCat();
+      if (slideIndex < cat.urls.length - 1) {
+        slideIndex++;
+      } else {
+        slideIndex = 0;
+      }
+      showSlide(false);
+    }, 6000);
+  }
+
+  function showSlide(showLoading) {
+    var cat = currentCat();
+    var urls = cat.urls;
+    if (!urls.length) return;
+    slideIndex = Math.max(0, Math.min(slideIndex, urls.length - 1));
+    var remote = urls[slideIndex];
+    var local = toLocalPreview(remote);
+
+    if (showLoading !== false) {
+      loadingEl.classList.add('show');
+      loadingEl.setAttribute('aria-hidden', 'false');
+    }
+
+    slideTitleEl.textContent = cat.title + ' — ' + humanLabel(remote);
+    slideCounterEl.textContent = (slideIndex + 1) + ' / ' + urls.length;
+    liveLinkEl.href = remote;
+    liveLinkEl.textContent = remote;
+
+    frameEl.onload = function () {
+      loadingEl.classList.remove('show');
+      loadingEl.setAttribute('aria-hidden', 'true');
+    };
+    frameEl.src = local;
+
+    btnPrev.disabled = urls.length <= 1;
+    btnNext.disabled = urls.length <= 1;
+
+    renderLinkList();
+  }
+
+  function renderCategories() {
+    catListEl.innerHTML = '';
+    CATEGORIES.forEach(function (cat, i) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'cat-btn';
+      btn.setAttribute('aria-current', i === catIndex ? 'true' : 'false');
+      btn.innerHTML =
+        cat.title +
+        '<small>' +
+        cat.file +
+        ' · ' +
+        cat.urls.length +
+        ' URL' +
+        (cat.urls.length === 1 ? '' : 's') +
+        '</small>';
+      btn.addEventListener('click', function () {
+        catIndex = i;
+        slideIndex = 0;
+        document.querySelectorAll('.cat-btn').forEach(function (b, j) {
+          b.setAttribute('aria-current', j === catIndex ? 'true' : 'false');
+        });
+        showSlide(true);
+        scheduleAuto();
+      });
+      catListEl.appendChild(btn);
+    });
+  }
+
+  function renderLinkList() {
+    var cat = currentCat();
+    linkListEl.innerHTML = '';
+    cat.urls.forEach(function (url, i) {
+      var li = document.createElement('li');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-current', i === slideIndex ? 'true' : 'false');
+      b.textContent = humanLabel(url);
+      b.title = url;
+      b.addEventListener('click', function () {
+        slideIndex = i;
+        showSlide(true);
+        scheduleAuto();
+      });
+      li.appendChild(b);
+      linkListEl.appendChild(li);
+    });
+  }
+
+  btnPrev.addEventListener('click', function () {
+    var cat = currentCat();
+    slideIndex = slideIndex <= 0 ? cat.urls.length - 1 : slideIndex - 1;
+    showSlide(true);
+    scheduleAuto();
+  });
+
+  btnNext.addEventListener('click', function () {
+    var cat = currentCat();
+    slideIndex = slideIndex >= cat.urls.length - 1 ? 0 : slideIndex + 1;
+    showSlide(true);
+    scheduleAuto();
+  });
+
+  autoAdvance.addEventListener('change', scheduleAuto);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.isContentEditable)) return;
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      btnPrev.click();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      btnNext.click();
+    }
+  });
+
+  renderCategories();
+  showSlide(true);
+  scheduleAuto();
+})();
+</script>
+</body>
+</html>
