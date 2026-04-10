@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheapest Car Insurance In Your State — Compare Now</title>
+<meta name="description" content="Find the cheapest car insurance rates in your state. Licensed agents compare dozens of carriers and find your lowest rate in minutes. Call free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #0D2447;
+  --navy2:  #162F58;
+  --green:  #1A7A3C;
+  --green-l:#F0F9F4;
+  --green-b:#C8E6D4;
+  --white:  #FFFFFF;
+  --gray:   #F7F8FA;
+  --border: #E2E8EF;
+  --text:   #0F172A;
+  --mid:    #475569;
+  --muted:  #94A3B8;
+  --sans: 'Plus Jakarta Sans', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+header{background:var(--navy);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}.logo span{color:#7DD3A8}
+.hcta{display:flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:9px 18px;border-radius:99px;text-decoration:none;transition:background .15s;white-space:nowrap}
+.hcta:hover{background:#146030}
+.hcta svg{width:14px;height:14px;flex-shrink:0}
+
+/* HERO */
+.hero{background:var(--navy);padding:64px 24px 60px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(125,211,168,0.12);color:#7DD3A8;border:1px solid rgba(125,211,168,0.25);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:26px}
+.hero h1{font-size:clamp(28px,5vw,50px);font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.025em;max-width:720px;margin:0 auto 20px}
+.hero h1 .hi{color:#7DD3A8}
+.hero-sub{font-size:clamp(15px,2vw,17px);color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 40px;line-height:1.7}
+.hero-sub strong{color:rgba(255,255,255,0.9);font-weight:600}
+.cta-block{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cta-main{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:#fff;font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 42px;border-radius:99px;text-decoration:none;box-shadow:0 0 0 4px rgba(26,122,60,0.28),0 8px 32px rgba(26,122,60,0.3);transition:background .15s,transform .1s;letter-spacing:-.01em}
+.cta-main:hover{background:#146030;transform:translateY(-2px)}
+.cta-main:active{transform:translateY(0)}
+.cta-main svg{width:20px;height:20px;flex-shrink:0}
+.cta-sub-line{font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:.01em}
+.cta-sub-line span{color:rgba(255,255,255,0.65);font-weight:500}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--navy2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:16px 24px}
+.ts-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 32px}
+.ti{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.55)}
+.tic{width:17px;height:17px;background:rgba(125,211,168,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:#7DD3A8;font-weight:800;flex-shrink:0}
+.tdiv{width:1px;height:14px;background:rgba(255,255,255,0.1)}
+
+/* STATE RATE SECTION */
+.state-rates{padding:64px 24px;background:var(--white)}
+.state-rates-inner{max-width:820px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--green);margin-bottom:10px;text-align:center}
+.sec-h{font-size:clamp(22px,3.5vw,32px);font-weight:800;text-align:center;letter-spacing:-.025em;margin-bottom:8px;color:var(--text);line-height:1.2}
+.sec-sub{font-size:15px;color:var(--mid);text-align:center;max-width:480px;margin:0 auto 40px}
+.rate-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:600px;margin:0 auto 40px}
+.rate-box{border-radius:14px;padding:28px 24px;text-align:center}
+.rate-box.current{background:var(--gray);border:1.5px solid var(--border)}
+.rate-box.ours{background:var(--green-l);border:2px solid var(--green-b)}
+.rate-lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.rate-box.current .rate-lbl{color:var(--muted)}
+.rate-box.ours .rate-lbl{color:var(--green)}
+.rate-amt{font-size:clamp(38px,6vw,54px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.rate-box.current .rate-amt{color:var(--text)}
+.rate-box.ours .rate-amt{color:var(--green)}
+.rate-period{font-size:13px;color:var(--muted);margin-top:4px}
+.rate-note{font-size:12px;color:var(--mid);margin-top:10px;line-height:1.5}
+.rate-arrow{display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--green);font-weight:800;align-self:center}
+.save-callout{background:var(--navy);border-radius:14px;padding:22px 28px;text-align:center;max-width:600px;margin:0 auto}
+.save-callout-text{font-size:17px;font-weight:700;color:#fff;line-height:1.5}
+.save-callout-text span{color:#7DD3A8}
+
+/* STATS */
+.stats-row{background:var(--navy);padding:44px 24px}
+.stats-inner{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-box{text-align:center;padding:10px 12px;border-right:1px solid rgba(255,255,255,0.08)}
+.stat-box:last-child{border-right:none}
+.stat-n{font-size:clamp(26px,4vw,38px);font-weight:800;color:#7DD3A8;letter-spacing:-.03em;line-height:1;margin-bottom:7px}
+.stat-l{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.45}
+.stat-l strong{display:block;font-weight:700;color:rgba(255,255,255,0.8);font-size:13px;margin-bottom:1px}
+
+/* TESTIMONIALS */
+.section{padding:68px 24px}
+.section-inner{max-width:840px;margin:0 auto}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tcard{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:24px;transition:border-color .15s,box-shadow .15s}
+.tcard:hover{border-color:var(--green-b);box-shadow:0 4px 20px rgba(26,122,60,0.08)}
+.tcard-quote{font-size:14.5px;color:var(--mid);line-height:1.72;margin-bottom:20px;position:relative}
+.tcard-quote::before{content:'\201C';font-size:48px;line-height:0;color:var(--green-b);position:absolute;top:14px;left:-6px;font-family:Georgia,serif}
+.tcard-quote p{padding-left:18px}
+.tcard-quote strong{color:var(--text);font-weight:700}
+.tcard-foot{display:flex;align-items:center;gap:10px}
+.avi{width:38px;height:38px;border-radius:50%;font-size:13px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.t-name{font-size:13px;font-weight:700;color:var(--text)}
+.t-loc{font-size:11px;color:var(--muted);margin-top:1px}
+.save-badge{margin-left:auto;background:var(--green-l);border:1.5px solid var(--green-b);color:var(--green);font-size:14px;font-weight:800;padding:5px 12px;border-radius:99px;white-space:nowrap;letter-spacing:-.01em}
+
+/* STEPS */
+.how-section{background:var(--gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:68px 24px}
+.steps{max-width:580px;margin:36px auto 0}
+.step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step-n{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-t{font-size:16px;font-weight:700;color:var(--text);margin-bottom:5px}
+.step-d{font-size:14px;color:var(--mid);line-height:1.65}
+.step-d strong{color:var(--text);font-weight:600}
+
+/* LEGIT */
+.legit-strip{background:var(--white);border-top:1px solid var(--border);padding:26px 24px}
+.legit-inner{max-width:680px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 36px}
+.legit-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--mid)}
+.legit-icon{width:20px;height:20px;border:1.5px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--navy);flex-shrink:0}
+
+/* BOTTOM CTA */
+.bottom-cta{background:var(--navy);padding:68px 24px;text-align:center;position:relative;overflow:hidden}
+.bottom-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 110%,rgba(26,122,60,0.18) 0%,transparent 70%);pointer-events:none}
+.btag{display:inline-block;background:rgba(125,211,168,0.12);color:#7DD3A8;border:1px solid rgba(125,211,168,0.2);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:24px}
+.bottom-cta h2{font-size:clamp(26px,4.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px;position:relative}
+.bottom-cta h2 .hi{color:#7DD3A8}
+.bottom-cta h3{font-size:clamp(15px,2vw,18px);font-weight:500;color:rgba(255,255,255,0.55);margin-bottom:36px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.65;position:relative}
+.cta-white{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--navy);font-family:var(--sans);font-size:19px;font-weight:800;padding:19px 44px;border-radius:99px;text-decoration:none;box-shadow:0 8px 36px rgba(0,0,0,0.25);transition:transform .1s,box-shadow .15s;letter-spacing:-.01em;position:relative}
+.cta-white:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
+.cta-white svg{width:20px;height:20px;color:var(--green);flex-shrink:0}
+.cta-white-sub{font-size:13px;color:rgba(255,255,255,0.38);margin-top:14px;position:relative}
+.cta-white-sub span{color:rgba(255,255,255,0.6)}
+
+/* STICKY */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:2px solid var(--green);padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:300;transform:translateY(100%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.sticky-bar.visible{transform:translateY(0)}
+.sticky-left .s1{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.sticky-left .s2{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
+.sticky-left .s2 span{color:#7DD3A8;font-weight:600}
+.sticky-btn{display:flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-family:var(--sans);font-size:14px;font-weight:800;padding:13px 22px;border-radius:99px;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 0 0 3px rgba(26,122,60,0.35);transition:background .15s;letter-spacing:-.01em}
+.sticky-btn:hover{background:#146030}
+.sticky-btn svg{width:15px;height:15px}
+.sticky-btn .s-sub{font-size:10px;font-weight:500;opacity:.7;display:block}
+
+/* FOOTER */
+footer{padding:28px 24px 96px;text-align:center;font-size:11px;color:var(--muted);line-height:1.8;background:var(--gray);border-top:1px solid var(--border)}
+footer a{color:var(--muted);text-decoration:underline}
+
+@media(max-width:600px){
+  .rate-compare{grid-template-columns:1fr;max-width:320px}
+  .rate-arrow{transform:rotate(90deg)}
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .stat-box:nth-child(2){border-right:none}
+  .stat-box:nth-child(3){border-top:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08)}
+  .stat-box:nth-child(4){border-top:1px solid rgba(255,255,255,0.08);border-right:none}
+  .tdiv{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Auto<span>Savings</span></div>
+  <a href="tel:+18005550000" class="hcta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+    Call Free Now
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag" id="heroTag">Car insurance rates — 2026</div>
+  <h1 id="heroH1">Cheapest Car Insurance<br>In Your State —<br><span class="hi">Compare Now.</span></h1>
+  <p class="hero-sub" id="heroSub">
+    Most drivers in your state are overpaying — and their insurer is counting on them not checking. One 2-minute call to our licensed agents <strong>finds the cheapest rate available for your zip code.</strong>
+  </p>
+  <div class="cta-block">
+    <a href="tel:+18005550000" class="cta-main">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      Call Now To Drop Your Rate
+    </a>
+    <p class="cta-sub-line" id="ctaSub"><span>Free · No commitment · </span>Licensed agents answer immediately</p>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="ts-inner">
+    <div class="ti"><div class="tic">✓</div><span id="trust1">Licensed &amp; regulated agents</span></div>
+    <div class="tdiv"></div>
+    <div class="ti"><div class="tic">✓</div>Dozens of carriers compared</div>
+    <div class="tdiv"></div>
+    <div class="ti"><div class="tic">✓</div>Same coverage — lower price</div>
+    <div class="tdiv"></div>
+    <div class="ti"><div class="tic">✓</div>Free call, no obligation</div>
+  </div>
+</div>
+
+<!-- STATE RATE COMPARISON -->
+<section class="state-rates">
+  <div class="state-rates-inner">
+    <p class="eyebrow" id="ratesEyebrow">What drivers in your state pay</p>
+    <h2 class="sec-h" id="ratesH2">The Average Driver In Your State<br>Is Paying Too Much For Insurance</h2>
+    <p class="sec-sub" id="ratesSub">Our agents compare dozens of carriers to find what you should actually be paying.</p>
+
+    <div class="rate-compare">
+      <div class="rate-box current">
+        <div class="rate-lbl">Average rate in your state</div>
+        <div class="rate-amt" id="avgRate">$140</div>
+        <div class="rate-period">per month</div>
+        <div class="rate-note">What most drivers are paying without shopping around</div>
+      </div>
+      <div class="rate-box ours">
+        <div class="rate-lbl">What our agents find</div>
+        <div class="rate-amt" id="ourRate">$58</div>
+        <div class="rate-period">per month</div>
+        <div class="rate-note">Same coverage. Dozens of carriers compared in one call.</div>
+      </div>
+    </div>
+
+    <div class="save-callout">
+      <div class="save-callout-text" id="saveCallout">Most drivers in your state save <span>over $80/month</span> — that's <span>$960+ per year</span> — in a single 2-minute call.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat-box">
+      <div class="stat-n">2 min</div>
+      <div class="stat-l"><strong>average call length</strong>to find your lowest rate</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n" id="statSave">$960+</div>
+      <div class="stat-l"><strong>average annual savings</strong><span id="statState">for drivers in your state</span></div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n">50+</div>
+      <div class="stat-l"><strong>carriers compared</strong>in a single call</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n">Today</div>
+      <div class="stat-l"><strong>when you start saving</strong>new rate begins immediately</div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Real customers · verified savings</p>
+    <h2 class="sec-h" id="testimH2">They Called. They Found A Better Rate.</h2>
+    <p class="sec-sub" style="text-align:center;max-width:460px;margin:0 auto 36px;font-size:15px;color:var(--mid)">Same vehicle. Same coverage. A fraction of the price.</p>
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p>"I'd been with the same company for 6 years and thought I was getting a loyalty discount. Called here and <strong>found out I was paying $112 more per month than I needed to.</strong> Switched in the same call."</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#3B5EA6">RK</div>
+          <div>
+            <div class="t-name">Robert K.</div>
+            <div class="t-loc" id="test1loc">Georgia · 6 years overpaying</div>
+          </div>
+          <div class="save-badge">−$112/mo</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p>"My renewal went up $55 and I couldn't figure out why — no accidents, no tickets. Agent found me a better rate <strong>in under 3 minutes. Saved $97 a month.</strong> Wish I hadn't waited."</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#2D7A4F">AL</div>
+          <div>
+            <div class="t-name">Angela L.</div>
+            <div class="t-loc" id="test2loc">Texas · Rate went up at renewal</div>
+          </div>
+          <div class="save-badge">−$97/mo</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p>"Spent two weeks going to comparison websites and nothing saved me more than $8. One phone call here and <strong>I'm paying $134 less per month.</strong> Same exact coverage."</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#7B4F9E">MP</div>
+          <div>
+            <div class="t-name">Marcus P.</div>
+            <div class="t-loc" id="test3loc">Florida · Comparison sites failed him</div>
+          </div>
+          <div class="save-badge">−$134/mo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div style="text-align:center;max-width:840px;margin:0 auto">
+    <p class="eyebrow">Simple process</p>
+    <h2 class="sec-h">Drop Your Rate In 3 Steps</h2>
+    <p class="sec-sub" style="max-width:440px;margin:0 auto">No forms. No waiting. Just a call and a lower number.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div>
+        <p class="step-t">Call — a licensed agent answers immediately</p>
+        <p class="step-d">A licensed agent picks up. They ask 4–5 quick questions: your vehicle, zip code, and what you're currently paying. <strong>No forms. No email required.</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div>
+        <p class="step-t">Hear your new lower rate on the spot</p>
+        <p class="step-d">The agent searches across dozens of carriers and reads you a rate — often <strong>significantly lower than what you're currently paying.</strong> Same coverage, same vehicle. No obligation.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div>
+        <p class="step-t">Switch in the same call — start saving today</p>
+        <p class="step-d">If the rate is better, you're covered immediately. We cancel your old policy for you. <strong>New lower rate starts the same day.</strong> Total call time: under 10 minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGIT STRIP -->
+<div class="legit-strip">
+  <div class="legit-inner">
+    <div class="legit-item"><div class="legit-icon">🔒</div>Secure &amp; confidential</div>
+    <div class="legit-item"><div class="legit-icon">📋</div>Licensed in all 50 states</div>
+    <div class="legit-item"><div class="legit-icon">✓</div>No hard sell, ever</div>
+    <div class="legit-item"><div class="legit-icon">📞</div>Real agents, no bots</div>
+    <div class="legit-item"><div class="legit-icon">$</div>Free to call, always</div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="btag" id="bottomTag">Find your lowest rate — free</div>
+  <h2 id="bottomH2">Stop Overpaying.<br>Find The Cheapest Rate<br>In <span class="hi" id="bottomState">Your State.</span></h2>
+  <h3 id="bottomSub">One 2-minute call to our licensed agents compares dozens of carriers and finds your lowest available rate — same coverage, immediately lower price.</h3>
+  <div class="cta-block">
+    <a href="tel:+18005550000" class="cta-white">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      Call Now To Drop Your Rate
+    </a>
+    <p class="cta-white-sub"><span>Free · No commitment · </span>Licensed agents answer immediately</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>This is an advertorial and not an official consumer protection update. Results shown are from real verified customers — individual savings vary based on driver profile, location, and available carriers. Average state rates are estimates based on industry data and may not reflect your specific situation. By calling, you agree to be connected with a licensed insurance agent. We are compensated by the insurer if you choose to switch. The call and rate check are always free.</p>
+  <p style="margin-top:8px">© 2026 AutoSavingsAct.org &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="#">Contact Us</a></p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-left">
+    <div class="s1" id="stickyS1">Find The Cheapest Rate In Your State — Call Now</div>
+    <div class="s2">Free call · <span>Licensed agents answer immediately</span></div>
+  </div>
+  <a href="tel:+18005550000" class="sticky-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+    <div>Drop My Rate Now<span class="s-sub">Free · No obligation</span></div>
+  </a>
+</div>
+
+<script>
+const bar = document.getElementById('stickyBar');
+const obs = new IntersectionObserver(([e]) => {
+  bar.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0.2 });
+obs.observe(document.querySelector('.hero'));
+</script>
+
+<script>
+/* ── State Dynamic Insertion ── */
+(function () {
+
+  /* ── All 50 states + DC
+     avg  = average monthly rate (est.)
+     save = typical monthly saving through our agents
+  ────────────────────────────────────────────── */
+  var states = {
+    'alabama':              { name:'Alabama',        abbr:'AL', avg:114, save:47 },
+    'alaska':               { name:'Alaska',         abbr:'AK', avg:131, save:54 },
+    'arizona':              { name:'Arizona',        abbr:'AZ', avg:134, save:56 },
+    'arkansas':             { name:'Arkansas',       abbr:'AR', avg:108, save:44 },
+    'california':           { name:'California',     abbr:'CA', avg:167, save:71 },
+    'colorado':             { name:'Colorado',       abbr:'CO', avg:131, save:54 },
+    'connecticut':          { name:'Connecticut',    abbr:'CT', avg:143, save:60 },
+    'delaware':             { name:'Delaware',       abbr:'DE', avg:138, save:57 },
+    'florida':              { name:'Florida',        abbr:'FL', avg:189, save:81 },
+    'georgia':              { name:'Georgia',        abbr:'GA', avg:158, save:67 },
+    'hawaii':               { name:'Hawaii',         abbr:'HI', avg:113, save:46 },
+    'idaho':                { name:'Idaho',          abbr:'ID', avg:88,  save:36 },
+    'illinois':             { name:'Illinois',       abbr:'IL', avg:121, save:50 },
+    'indiana':              { name:'Indiana',        abbr:'IN', avg:103, save:42 },
+    'iowa':                 { name:'Iowa',           abbr:'IA', avg:97,  save:39 },
+    'kansas':               { name:'Kansas',         abbr:'KS', avg:103, save:42 },
+    'kentucky':             { name:'Kentucky',       abbr:'KY', avg:113, save:46 },
+    'louisiana':            { name:'Louisiana',      abbr:'LA', avg:172, save:73 },
+    'maine':                { name:'Maine',          abbr:'ME', avg:88,  save:36 },
+    'maryland':             { name:'Maryland',       abbr:'MD', avg:148, save:62 },
+    'massachusetts':        { name:'Massachusetts',  abbr:'MA', avg:114, save:47 },
+    'michigan':             { name:'Michigan',       abbr:'MI', avg:167, save:71 },
+    'minnesota':            { name:'Minnesota',      abbr:'MN', avg:113, save:46 },
+    'mississippi':          { name:'Mississippi',    abbr:'MS', avg:119, save:49 },
+    'missouri':             { name:'Missouri',       abbr:'MO', avg:108, save:44 },
+    'montana':              { name:'Montana',        abbr:'MT', avg:113, save:46 },
+    'nebraska':             { name:'Nebraska',       abbr:'NE', avg:97,  save:39 },
+    'nevada':               { name:'Nevada',         abbr:'NV', avg:148, save:62 },
+    'new hampshire':        { name:'New Hampshire',  abbr:'NH', avg:88,  save:36 },
+    'new jersey':           { name:'New Jersey',     abbr:'NJ', avg:178, save:76 },
+    'new mexico':           { name:'New Mexico',     abbr:'NM', avg:113, save:46 },
+    'new york':             { name:'New York',       abbr:'NY', avg:196, save:84 },
+    'north carolina':       { name:'North Carolina', abbr:'NC', avg:103, save:42 },
+    'north dakota':         { name:'North Dakota',   abbr:'ND', avg:88,  save:36 },
+    'ohio':                 { name:'Ohio',           abbr:'OH', avg:97,  save:39 },
+    'oklahoma':             { name:'Oklahoma',       abbr:'OK', avg:138, save:57 },
+    'oregon':               { name:'Oregon',         abbr:'OR', avg:113, save:46 },
+    'pennsylvania':         { name:'Pennsylvania',   abbr:'PA', avg:113, save:46 },
+    'rhode island':         { name:'Rhode Island',   abbr:'RI', avg:143, save:60 },
+    'south carolina':       { name:'South Carolina', abbr:'SC', avg:126, save:52 },
+    'south dakota':         { name:'South Dakota',   abbr:'SD', avg:97,  save:39 },
+    'tennessee':            { name:'Tennessee',      abbr:'TN', avg:119, save:49 },
+    'texas':                { name:'Texas',          abbr:'TX', avg:148, save:62 },
+    'utah':                 { name:'Utah',           abbr:'UT', avg:113, save:46 },
+    'vermont':              { name:'Vermont',        abbr:'VT', avg:88,  save:36 },
+    'virginia':             { name:'Virginia',       abbr:'VA', avg:103, save:42 },
+    'washington':           { name:'Washington',     abbr:'WA', avg:118, save:49 },
+    'washington dc':        { name:'Washington DC',  abbr:'DC', avg:167, save:71 },
+    'west virginia':        { name:'West Virginia',  abbr:'WV', avg:108, save:44 },
+    'wisconsin':            { name:'Wisconsin',      abbr:'WI', avg:97,  save:39 },
+    'wyoming':              { name:'Wyoming',        abbr:'WY', avg:97,  save:39 },
+    /* abbr aliases */
+    'al':{ redir:'alabama' },'ak':{ redir:'alaska' },'az':{ redir:'arizona' },
+    'ar':{ redir:'arkansas' },'ca':{ redir:'california' },'co':{ redir:'colorado' },
+    'ct':{ redir:'connecticut' },'de':{ redir:'delaware' },'fl':{ redir:'florida' },
+    'ga':{ redir:'georgia' },'hi':{ redir:'hawaii' },'id':{ redir:'idaho' },
+    'il':{ redir:'illinois' },'in':{ redir:'indiana' },'ia':{ redir:'iowa' },
+    'ks':{ redir:'kansas' },'ky':{ redir:'kentucky' },'la':{ redir:'louisiana' },
+    'me':{ redir:'maine' },'md':{ redir:'maryland' },'ma':{ redir:'massachusetts' },
+    'mi':{ redir:'michigan' },'mn':{ redir:'minnesota' },'ms':{ redir:'mississippi' },
+    'mo':{ redir:'missouri' },'mt':{ redir:'montana' },'ne':{ redir:'nebraska' },
+    'nv':{ redir:'nevada' },'nh':{ redir:'new hampshire' },'nj':{ redir:'new jersey' },
+    'nm':{ redir:'new mexico' },'ny':{ redir:'new york' },'nc':{ redir:'north carolina' },
+    'nd':{ redir:'north dakota' },'oh':{ redir:'ohio' },'ok':{ redir:'oklahoma' },
+    'or':{ redir:'oregon' },'pa':{ redir:'pennsylvania' },'ri':{ redir:'rhode island' },
+    'sc':{ redir:'south carolina' },'sd':{ redir:'south dakota' },'tn':{ redir:'tennessee' },
+    'tx':{ redir:'texas' },'ut':{ redir:'utah' },'vt':{ redir:'vermont' },
+    'va':{ redir:'virginia' },'wa':{ redir:'washington' },'dc':{ redir:'washington dc' },
+    'wv':{ redir:'west virginia' },'wi':{ redir:'wisconsin' },'wy':{ redir:'wyoming' }
+  };
+
+  /* ── Resolve state from URL
+     Checks: ?state=california  OR  ?utm_term=car+insurance+california
+  ──────────────────────────────────────────────────────────────────── */
+  function getStateKey() {
+    var params = new URLSearchParams(window.location.search);
+
+    /* 1. Explicit ?state= param */
+    var s = (params.get('state') || '').toLowerCase().trim();
+    if (s && states[s]) return s.redir ? s.redir : s;
+
+    /* 2. utm_term — scan for state name/abbr inside keyword */
+    var kw = (params.get('utm_term') || '').toLowerCase().replace(/\+/g, ' ').trim();
+    if (kw) {
+      /* Try full state names first (longest match wins) */
+      var keys = Object.keys(states).filter(function(k) { return !states[k].redir; });
+      keys.sort(function(a,b){ return b.length - a.length; });
+      for (var i = 0; i < keys.length; i++) {
+        if (kw.indexOf(keys[i]) !== -1) return keys[i];
+      }
+      /* Try abbreviations (as isolated words) */
+      var abbrKeys = Object.keys(states).filter(function(k) { return states[k].redir; });
+      for (var j = 0; j < abbrKeys.length; j++) {
+        var re = new RegExp('\\b' + abbrKeys[j] + '\\b');
+        if (re.test(kw)) return states[abbrKeys[j]].redir;
+      }
+    }
+    return null;
+  }
+
+  var key = getStateKey();
+  if (!key) return; /* No state found — show default copy */
+
+  var d = states[key];
+  var n     = d.name;
+  var avg   = d.avg;
+  var save  = d.save;
+  var low   = avg - save;
+  var annualSave = save * 12;
+
+  /* ── DOM updates ── */
+  function set(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
+  function setTitle(t) { document.title = t; }
+
+  setTitle('Cheapest Car Insurance In ' + n + ' — Compare Now');
+
+  set('heroTag',    'Car insurance rates — ' + n + ' 2026');
+  set('heroH1',     'Cheapest Car Insurance<br>In ' + n + ' —<br><span class="hi">Compare Now.</span>');
+  set('heroSub',    'Most ' + n + ' drivers are overpaying — and their insurer is counting on them not checking. One 2-minute call to our licensed agents <strong>finds the cheapest rate available in ' + n + '.</strong>');
+  set('ctaSub',     '<span>Free · No commitment · </span>Licensed ' + n + ' agents answer immediately');
+  set('trust1',     'Licensed ' + n + ' agents');
+
+  set('ratesEyebrow', 'What ' + n + ' drivers pay');
+  set('ratesH2',    'The Average ' + n + ' Driver<br>Is Paying Too Much For Insurance');
+  set('ratesSub',   'Our agents compare dozens of carriers available in ' + n + ' to find what you should actually be paying.');
+  set('avgRate',    '$' + avg);
+  set('ourRate',    '$' + low);
+  set('saveCallout','Most ' + n + ' drivers save <span>$' + save + '/month</span> — that\'s <span>$' + annualSave + '+ per year</span> — in a single 2-minute call.');
+
+  set('stateSave',  '$' + annualSave + '+');
+  set('statState',  'average annual savings for ' + n + ' drivers');
+
+  set('testimH2',   n + ' Drivers Called. They Found A Better Rate.');
+  set('test1loc',   n + ' · 6 years overpaying');
+  set('test2loc',   n + ' · Rate went up at renewal');
+  set('test3loc',   n + ' · Comparison sites failed him');
+
+  set('bottomTag',  'Find the cheapest ' + n + ' rate — free');
+  set('bottomH2',   'Stop Overpaying.<br>Find The Cheapest Rate<br>In <span class="hi">' + n + '.</span>');
+  set('bottomSub',  'One 2-minute call to our licensed ' + n + ' agents compares dozens of carriers and finds your lowest available rate — same coverage, immediately lower price.');
+  set('bottomState', n + '.');
+
+  set('stickyS1',   'Find The Cheapest Rate In ' + n + ' — Call Now');
+
+  /* Sticky button text is always constant */
+
+})();
+</script>
+
+</body>
+</html>
