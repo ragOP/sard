@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Most Drivers Cut Their Auto Insurance Rate By Up To 70% After Calling</title>
+<meta name="description" content="Stop overpaying. Call now and drop your auto insurance rate by up to 70%. Same coverage, lower price. Licensed agents available now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #0D2447;
+  --navy2:   #162F58;
+  --green:   #1A7A3C;
+  --green-l: #F0F9F4;
+  --green-b: #C8E6D4;
+  --white:   #FFFFFF;
+  --gray:    #F7F8FA;
+  --border:  #E2E8EF;
+  --text:    #0F172A;
+  --mid:     #475569;
+  --muted:   #94A3B8;
+  --sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── HEADER ─── */
+header {
+  background: var(--navy);
+  padding: 13px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.logo { font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -.01em; }
+.logo span { color: #7DD3A8; }
+.header-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.header-phone .ph-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--green);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .15s;
+}
+.header-phone .ph-pill:hover { background: #146030; }
+.ph-pill svg { width: 14px; height: 14px; }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--navy);
+  padding: 64px 24px 60px;
+  text-align: center;
+}
+.hero-tag {
+  display: inline-block;
+  background: rgba(125,211,168,0.12);
+  color: #7DD3A8;
+  border: 1px solid rgba(125,211,168,0.25);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 99px;
+  margin-bottom: 26px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 50px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  max-width: 680px;
+  margin: 0 auto 20px;
+}
+.hero h1 .pct {
+  color: #7DD3A8;
+  display: inline;
+}
+.hero-sub {
+  font-size: clamp(15px, 2vw, 17px);
+  color: rgba(255,255,255,0.6);
+  max-width: 480px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.hero-sub strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+/* ─── CTA BLOCK ─── */
+.cta-block { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.cta-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 800;
+  padding: 19px 42px;
+  border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 0 0 4px rgba(26,122,60,0.28), 0 8px 32px rgba(26,122,60,0.3);
+  transition: background .15s, transform .1s;
+  letter-spacing: -.01em;
+}
+.cta-main:hover { background: #146030; transform: translateY(-2px); }
+.cta-main:active { transform: translateY(0); }
+.cta-main svg { width: 20px; height: 20px; flex-shrink: 0; }
+.cta-sub-line {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: .01em;
+}
+.cta-sub-line span { color: rgba(255,255,255,0.65); font-weight: 500; }
+
+/* ─── TRUST STRIP ─── */
+.trust-strip {
+  background: var(--navy2);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 16px 24px;
+}
+.trust-strip-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 32px;
+}
+.t-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+}
+.t-icon {
+  width: 17px; height: 17px;
+  background: rgba(125,211,168,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px;
+  color: #7DD3A8;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.t-div { width: 1px; height: 14px; background: rgba(255,255,255,0.1); }
+
+/* ─── STATS ─── */
+.stats-row {
+  background: var(--gray);
+  border-bottom: 1px solid var(--border);
+  padding: 44px 24px;
+}
+.stats-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.stat-box {
+  text-align: center;
+  padding: 10px 12px;
+  border-right: 1px solid var(--border);
+}
+.stat-box:last-child { border-right: none; }
+.stat-n {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin-bottom: 7px;
+}
+.stat-n .pct { color: var(--green); }
+.stat-l {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.stat-l strong { display: block; font-weight: 700; color: var(--mid); font-size: 13px; margin-bottom: 1px; }
+
+/* ─── TESTIMONIALS ─── */
+.section { padding: 68px 24px; }
+.section-inner { max-width: 840px; margin: 0 auto; }
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.sec-h {
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -.025em;
+  margin-bottom: 8px;
+  color: var(--text);
+  line-height: 1.2;
+}
+.sec-sub {
+  font-size: 15px;
+  color: var(--mid);
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+.tgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.tcard {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.tcard:hover { border-color: var(--green-b); box-shadow: 0 4px 20px rgba(26,122,60,0.08); }
+.tcard-quote {
+  font-size: 14.5px;
+  color: var(--mid);
+  line-height: 1.72;
+  margin-bottom: 20px;
+  position: relative;
+}
+.tcard-quote::before {
+  content: '\201C';
+  font-size: 48px;
+  line-height: 0;
+  color: var(--green-b);
+  position: absolute;
+  top: 14px;
+  left: -6px;
+  font-family: Georgia, serif;
+}
+.tcard-quote p { padding-left: 18px; }
+.tcard-quote strong { color: var(--text); font-weight: 700; }
+.tcard-foot { display: flex; align-items: center; gap: 10px; }
+.avi {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.t-name { font-size: 13px; font-weight: 700; color: var(--text); }
+.t-loc  { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.save-badge {
+  margin-left: auto;
+  background: var(--green-l);
+  border: 1.5px solid var(--green-b);
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 800;
+  padding: 5px 13px;
+  border-radius: 99px;
+  white-space: nowrap;
+  letter-spacing: -.01em;
+}
+
+/* ─── HOW IT WORKS ─── */
+.how-section { background: var(--gray); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 68px 24px; }
+.steps { max-width: 580px; margin: 0 auto; }
+.step {
+  display: flex;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.step:last-child { border-bottom: none; }
+.step-n {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.step-t { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+.step-d { font-size: 14px; color: var(--mid); line-height: 1.65; }
+.step-d strong { color: var(--text); font-weight: 600; }
+
+/* ─── BOTTOM CTA SECTION ─── */
+.bottom-cta {
+  background: var(--navy);
+  padding: 68px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.bottom-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 600px 300px at 50% 110%, rgba(26,122,60,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.btag {
+  display: inline-block;
+  background: rgba(125,211,168,0.12);
+  color: #7DD3A8;
+  border: 1px solid rgba(125,211,168,0.2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+.bottom-cta h2 {
+  font-size: clamp(26px, 4.5vw, 44px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  position: relative;
+}
+.bottom-cta h2 .pct { color: #7DD3A8; }
+.bottom-cta h3 {
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 36px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+  position: relative;
+}
+.cta-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 800;
+  padding: 19px 44px;
+  border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 8px 36px rgba(0,0,0,0.25);
+  transition: transform .1s, box-shadow .15s;
+  letter-spacing: -.01em;
+  position: relative;
+}
+.cta-white:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.cta-white svg { width: 20px; height: 20px; color: var(--green); flex-shrink: 0; }
+.cta-white-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.38);
+  margin-top: 14px;
+  position: relative;
+}
+.cta-white-sub span { color: rgba(255,255,255,0.6); }
+
+/* ─── LEGITIMACY STRIP ─── */
+.legit-strip {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 28px 24px;
+}
+.legit-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 36px;
+}
+.legit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mid);
+}
+.legit-icon {
+  width: 20px; height: 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+/* ─── STICKY BAR ─── */
+.sticky-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--navy);
+  border-top: 2px solid var(--green);
+  padding: 12px 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 300;
+  transform: translateY(100%);
+  transition: transform .35s cubic-bezier(.16,1,.3,1);
+}
+.sticky-bar.visible { transform: translateY(0); }
+.sticky-left { line-height: 1.35; }
+.sticky-left .s1 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.01em;
+}
+.sticky-left .s2 {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 2px;
+}
+.sticky-left .s2 span { color: #7DD3A8; font-weight: 600; }
+.sticky-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 800;
+  padding: 13px 22px;
+  border-radius: 99px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(26,122,60,0.35);
+  transition: background .15s;
+  letter-spacing: -.01em;
+}
+.sticky-btn:hover { background: #146030; }
+.sticky-btn svg { width: 15px; height: 15px; }
+.sticky-btn .s-sub { font-size: 10px; font-weight: 500; opacity: .7; display: block; }
+
+/* ─── FOOTER ─── */
+footer {
+  padding: 28px 24px 96px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+  background: var(--gray);
+  border-top: 1px solid var(--border);
+}
+footer a { color: var(--muted); text-decoration: underline; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 540px) {
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat-box:nth-child(2) { border-right: none; }
+  .stat-box:nth-child(3) { border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
+  .stat-box:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+  .t-div { display: none; }
+  .step { flex-direction: row; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Auto<span>Savings</span></div>
+  <a href="tel:+18005550000" class="header-phone">
+    <div class="ph-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      Call Free Now
+    </div>
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Auto insurance alert — 2026</div>
+
+  <h1>Most Drivers Cut Their Auto<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span></h1>
+
+  <p class="hero-sub">
+    Your insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One 2-minute call to our licensed agents finds out if you're one of the millions overpaying.
+  </p>
+
+  <div class="cta-block">
+    <a href="tel:+18005550000" class="cta-main">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      Call Now To Drop Your Rate
+    </a>
+    <p class="cta-sub-line">
+      <span>Free · No commitment · </span>Licensed agents answer immediately
+    </p>
+  </div>
+</section>
+
+<!-- TRUST STRIP (inside hero, dark bg) -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="t-item"><div class="t-icon">✓</div>Licensed &amp; regulated agents</div>
+    <div class="t-div"></div>
+    <div class="t-item"><div class="t-icon">✓</div>No spam. No hard sell.</div>
+    <div class="t-div"></div>
+    <div class="t-item"><div class="t-icon">✓</div>Available in all 50 states</div>
+    <div class="t-div"></div>
+    <div class="t-item"><div class="t-icon">✓</div>Same coverage — lower price</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat-box">
+      <div class="stat-n"><span class="pct">70%</span></div>
+      <div class="stat-l"><strong>maximum rate drop</strong>reported by customers who called</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n">$961</div>
+      <div class="stat-l"><strong>average annual savings</strong>for drivers who switch</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n">2 min</div>
+      <div class="stat-l"><strong>average call length</strong>to get a lower rate on the spot</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-n">$0</div>
+      <div class="stat-l"><strong>cost to call</strong>completely free, zero obligation</div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Real customers · verified savings</p>
+    <h2 class="sec-h">They Called. They Saved. So Can You.</h2>
+    <p class="sec-sub">Same vehicle. Same coverage. A fraction of the price.</p>
+    <div class="tgrid">
+
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p>"I had Nationwide for 25 years — no claims, two minor tickets. My rate kept rising at every renewal and I never questioned it. <strong>One call dropped my monthly payment by $130.</strong> Same exact coverage."</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#3B5EA6">MH</div>
+          <div>
+            <div class="t-name">Mary H.</div>
+            <div class="t-loc">Georgia · Switched after one call</div>
+          </div>
+          <div class="save-badge">-$130/mo</div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p>"I already shopped around myself — nothing was more than $5 cheaper. Called here and the agent found me a rate <strong>$120/month lower</strong> in about 3 minutes. I couldn't believe it was that simple."</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#2D7A4F">GV</div>
+          <div>
+            <div class="t-name">Gregorio V.</div>
+            <div class="t-loc">Texas · Switched in one call</div>
+          </div>
+          <div class="save-badge">-$120/mo</div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-quote">
+          <p>"My renewal notice showed a $60 jump — no explanation. Called on a Wednesday. <strong>By Thursday I was paying $87 less a month.</strong> Agent was straight with me, no pressure. Wish I'd called sooner."</p>
+        </div>
+        <div class="tcard-foot">
+          <div class="avi" style="background:#7B4F9E">RC</div>
+          <div>
+            <div class="t-name">Robert C.</div>
+            <div class="t-loc">Florida · Switched after renewal hike</div>
+          </div>
+          <div class="save-badge">-$87/mo</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-inner" style="text-align:center;margin-bottom:0">
+    <p class="eyebrow">Simple process</p>
+    <h2 class="sec-h">Drop Your Rate In 3 Steps</h2>
+    <p class="sec-sub" style="margin-bottom:0">No forms. No waiting. Just a call and a lower number.</p>
+  </div>
+  <div class="steps" style="margin-top:36px">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div>
+        <p class="step-t">Call us — your agent answers immediately</p>
+        <p class="step-d">A licensed agent picks up. They ask 4–5 quick questions: your vehicle, zip code, and what you're currently paying. <strong>No forms. No email required.</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div>
+        <p class="step-t">Hear your new rate on the spot</p>
+        <p class="step-d">The agent searches across multiple carriers and reads you a rate — often <strong>up to 70% lower</strong> than what you're paying now. Same coverage, same vehicle. No obligation.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div>
+        <p class="step-t">Switch in the same call — start saving today</p>
+        <p class="step-d">If the rate is better, you're covered immediately. We cancel your old policy for you. <strong>New lower rate starts the same day.</strong> Total call time: under 10 minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGITIMACY STRIP -->
+<div class="legit-strip">
+  <div class="legit-inner">
+    <div class="legit-item">
+      <div class="legit-icon">🔒</div>
+      Secure &amp; confidential
+    </div>
+    <div class="legit-item">
+      <div class="legit-icon">📋</div>
+      Licensed in all 50 states
+    </div>
+    <div class="legit-item">
+      <div class="legit-icon">✓</div>
+      No obligation to switch
+    </div>
+    <div class="legit-item">
+      <div class="legit-icon">📞</div>
+      Real agents, no bots
+    </div>
+    <div class="legit-item">
+      <div class="legit-icon">$</div>
+      Free service, always
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="btag">Stop overpaying — call now</div>
+
+  <h2>Enjoy The Same Coverage.<br>Pay Up To <span class="pct">70% Less.</span></h2>
+  <h3>Call us now and our licensed agents will find your lower rate in minutes — or confirm you already have the best deal. Either way, you'll know for certain.</h3>
+
+  <div class="cta-block">
+    <a href="tel:+18005550000" class="cta-white">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+      Call Now To Drop Your Rate
+    </a>
+    <p class="cta-white-sub">
+      <span>Free · Licensed agents · </span>Takes 2 minutes
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>This is an advertorial and not an official consumer protection update. Results shown are from real verified customers — individual savings vary based on driver profile, location, and available carriers. "Up to 70%" reflects the maximum savings reported and is not guaranteed for every caller. By calling, you agree to be connected with a licensed insurance agent. We are compensated by the insurer if you choose to switch. The call and rate check are always free.</p>
+  <p style="margin-top:8px">© 2026 AutoSavingsAct.org &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="#">Contact Us</a></p>
+</footer>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-left">
+    <div class="s1">Enjoy The Same Coverage — Pay Up To 70% Less!</div>
+    <div class="s2">Call now · <span>Licensed agents answer immediately</span> · Free</div>
+  </div>
+  <a href="tel:+18005550000" class="sticky-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.92 1.18 2 2 0 012.92 0h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.35 1.9.59 2.91.72A2 2 0 0121.28 14l.64 2.92z"/></svg>
+    <div>
+      Call Now To Drop Your Rate
+      <span class="s-sub">Free · No obligation</span>
+    </div>
+  </a>
+</div>
+
+<script>
+const bar = document.getElementById('stickyBar');
+const hero = document.querySelector('.hero');
+const obs = new IntersectionObserver(([e]) => {
+  bar.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0.2 });
+obs.observe(hero);
+</script>
+
+
+
+
+<script>
+/* ── UTM Dynamic Keyword Insertion ── */
+(function () {
+  var raw = new URLSearchParams(window.location.search).get('utm_term') || '';
+  var k = raw.toLowerCase().trim();
+  if (!k) return;
+
+  var variants = [
+
+    /* California */
+    { match: ['california', ' ca '],
+      tag:       'Auto insurance alert — California 2026',
+      h1:        'Most California Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'Your CA insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One 2-minute call to our licensed agents finds out exactly how much you're overpaying.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed CA agents answer immediately',
+      sticky:    'California Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My CA Rate Now' },
+
+    /* Texas */
+    { match: ['texas', ' tx '],
+      tag:       'Auto insurance alert — Texas 2026',
+      h1:        'Most Texas Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'Your TX insurer quietly raises your rate every year — even with a <strong>clean record.</strong> One call to our licensed Texas agents reveals exactly how much you've been overpaying.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed TX agents answer immediately',
+      sticky:    'Texas Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My TX Rate Now' },
+
+    /* Florida */
+    { match: ['florida', ' fl '],
+      tag:       'Auto insurance alert — Florida 2026',
+      h1:        'Most Florida Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'FL rates are among the highest in the country — and your insurer counts on you not switching. One call to our licensed agents shows you a better rate fast.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed FL agents answer immediately',
+      sticky:    'Florida Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My FL Rate Now' },
+
+    /* New York */
+    { match: ['new york', ' ny '],
+      tag:       'Auto insurance alert — New York 2026',
+      h1:        'Most New York Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'NY drivers pay some of the highest insurance rates in the country. One 2-minute call to our licensed agents checks if you're one of the thousands <strong>massively overpaying.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed NY agents answer immediately',
+      sticky:    'New York Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My NY Rate Now' },
+
+    /* Georgia */
+    { match: ['georgia', ' ga '],
+      tag:       'Auto insurance alert — Georgia 2026',
+      h1:        'Most Georgia Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'Your GA insurer quietly raises your rate at every renewal — even with no claims. One 2-minute call to our licensed Georgia agents finds you a better rate immediately.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed GA agents answer immediately',
+      sticky:    'Georgia Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My GA Rate Now' },
+
+    /* Arizona */
+    { match: ['arizona', ' az '],
+      tag:       'Auto insurance alert — Arizona 2026',
+      h1:        'Most Arizona Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'AZ drivers are routinely overcharged at renewal — even with a clean record. One call to our licensed Arizona agents compares your rate against dozens of better options instantly.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed AZ agents answer immediately',
+      sticky:    'Arizona Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My AZ Rate Now' },
+
+    /* Illinois */
+    { match: ['illinois', ' il '],
+      tag:       'Auto insurance alert — Illinois 2026',
+      h1:        'Most Illinois Drivers Cut Their<br>Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'IL drivers are often overpaying without knowing it. One 2-minute call to our licensed Illinois agents compares your rate and finds you a lower option — same coverage, lower price.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed IL agents answer immediately',
+      sticky:    'Illinois Drivers — Pay Up To 70% Less On Car Insurance!',
+      stickyBtn: 'Drop My IL Rate Now' },
+
+    /* Overpaying / overcharged */
+    { match: ['overpay', 'overcharg', 'too much', 'paying too'],
+      tag:       'You're probably being overcharged',
+      h1:        'Your Insurer Has Been Quietly<br>Raising Your Rate.<br><span class="pct">Fix It In One Call.</span>',
+      sub:       'Insurance companies count on you not checking. One 2-minute call to our licensed agents compares your rate against dozens of carriers and shows you exactly how much you've been overpaying.',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Stop Overpaying — Cut Your Rate By Up To 70% Today!',
+      stickyBtn: 'Stop Overpaying Now' },
+
+    /* Switch / cancel */
+    { match: ['switch', 'cancel', 'change insur', 'new policy', 'change my'],
+      tag:       'Switch and start saving today',
+      h1:        'Switch Car Insurance In<br>One 2-Minute Call.<br><span class="pct">Save Up To 70% Instantly.</span>',
+      sub:       'Switching is easier than you think. Our licensed agents handle cancellation of your old policy for you — and most drivers are paying less <strong>the very same day.</strong>',
+      ctaSub:    '<span>Free · We cancel your old policy · </span>Same-day coverage',
+      sticky:    'Switch In One Call — Save Up To 70% Immediately!',
+      stickyBtn: 'Switch & Save Now' },
+
+    /* Compare / shop */
+    { match: ['compar', 'best rate', 'cheapest rate', 'lowest rate', 'shop'],
+      tag:       'Compare rates in 2 minutes — free',
+      h1:        'Compare Car Insurance Rates<br>Across Dozens Of Carriers —<br><span class="pct">In One 2-Minute Call.</span>',
+      sub:       'Stop comparing sites one by one. One call to our licensed agents compares rates across dozens of carriers simultaneously — and most drivers find a rate <strong>up to 70% lower.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Compare Dozens Of Rates In One Call — Save Up To 70%!',
+      stickyBtn: 'Compare My Rates Now' },
+
+    /* Near me / local */
+    { match: ['near me', 'local', 'my area', 'my zip'],
+      tag:       'Local licensed agents — available now',
+      h1:        'Local Agents Find Drivers<br>Car Insurance Rates<br><span class="pct">Up To 70% Cheaper.</span>',
+      sub:       'Our licensed local agents know every carrier available in your area. One 2-minute call compares your current rate against the best local options — <strong>most drivers are shocked by the difference.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Local agents answer immediately',
+      sticky:    'Local Agents Available Now — Save Up To 70% On Your Rate!',
+      stickyBtn: 'Talk To Local Agent Now' },
+
+    /* Renewal */
+    { match: ['renew', 'renewal', 'expir'],
+      tag:       'Before you renew — read this',
+      h1:        'Don't Renew Until You Check<br>If You're Being Overcharged.<br><span class="pct">Save Up To 70% In One Call.</span>',
+      sub:       'Renewal time is when insurers quietly hike your rate. Before you auto-renew, one 2-minute call to our licensed agents compares what you're about to pay against dozens of better options.',
+      ctaSub:    '<span>Free · No commitment · </span>Takes under 2 minutes',
+      sticky:    'Don't Auto-Renew — You Could Be Paying 70% Too Much!',
+      stickyBtn: 'Check Before Renewing' },
+
+    /* Bad credit */
+    { match: ['bad credit', 'no credit', 'poor credit', 'credit check', 'low credit'],
+      tag:       'Bad credit? You can still save big',
+      h1:        'Bad Credit Drivers Still Cut<br>Their Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'Your credit score doesn't have to mean high insurance rates forever. Our licensed agents compare carriers that specialize in <strong>lower rates for bad credit drivers</strong> — one call finds your best option.',
+      ctaSub:    '<span>Free · No credit check · </span>Licensed agents answer immediately',
+      sticky:    'Bad Credit Drivers — Still Cut Your Rate By Up To 70%!',
+      stickyBtn: 'Check My Rate Now' },
+
+    /* SR-22 */
+    { match: ['sr22', 'sr-22', 'sr 22', 'dui', 'dwi', 'suspended license', 'high risk'],
+      tag:       'SR-22 insurance — affordable options',
+      h1:        'Need SR-22 Insurance?<br>Cut Your Rate By Up To<br><span class="pct">70% — One Call Away.</span>',
+      sub:       'SR-22 doesn't have to mean unaffordable. Our licensed agents find SR-22 coverage across dozens of carriers and most drivers are <strong>shocked at how much lower their rate can be.</strong>',
+      ctaSub:    '<span>Free · SR-22 filing included · </span>Licensed agents answer immediately',
+      sticky:    'SR-22 Drivers — Cut Your Rate By Up To 70% Today!',
+      stickyBtn: 'Get SR-22 Rate Now' },
+
+    /* Liability only */
+    { match: ['liability', 'liability only', 'minimum coverage', 'basic coverage', 'state minimum'],
+      tag:       'Liability only — lowest rates available',
+      h1:        'Liability Only Car Insurance<br>At The Lowest Rate.<br><span class="pct">Save Up To 70% In One Call.</span>',
+      sub:       'You only need to pay for the coverage you actually want. Our licensed agents find the cheapest liability-only rates available in your state — <strong>most drivers overpay by hundreds per year.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Liability Only — Get The Lowest Rate Available, Call Now!',
+      stickyBtn: 'Get Liability Rate Now' },
+
+    /* Young / new driver */
+    { match: ['young driver', 'new driver', 'teen', 'student', '18 year', '19 year', '20 year', '21 year', 'first time'],
+      tag:       'Young drivers — big savings available',
+      h1:        'Young Drivers Are Cutting<br>Their Insurance Rate By Up To<br><span class="pct">70% After Calling.</span>',
+      sub:       'New and young drivers don't have to accept sky-high rates. Our licensed agents compare dozens of carriers and find options specifically suited for <strong>young drivers — often far cheaper than expected.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Young Drivers — Cut Your Rate By Up To 70% Today!',
+      stickyBtn: 'Get Young Driver Rate' },
+
+    /* Monthly payment / pay monthly */
+    { match: ['monthly', 'pay monthly', 'month to month', 'monthly payment'],
+      tag:       'Monthly car insurance — lowest rate',
+      h1:        'Cut Your Monthly Car<br>Insurance Payment By Up To<br><span class="pct">70% In One Call.</span>',
+      sub:       'One call to our licensed agents compares monthly rates across dozens of carriers. Most drivers find a <strong>significantly lower monthly payment — same coverage, same vehicle.</strong>',
+      ctaSub:    '<span>Free · No commitment · </span>Licensed agents answer immediately',
+      sticky:    'Lower Your Monthly Payment By Up To 70% — Call Now!',
+      stickyBtn: 'Lower My Monthly Payment' },
+
+    /* Online */
+    { match: ['online', 'instant quote', 'quick quote'],
+      tag:       'Get your rate in 2 minutes — free',
+      h1:        'Get A Lower Car Insurance Rate<br>In One Quick Call.<br><span class="pct">Save Up To 70% Today.</span>',
+      sub:       'No forms, no waiting, no back-and-forth. One 2-minute call to our licensed agents gets you a rate comparison across dozens of carriers — <strong>most drivers save immediately.</strong>',
+      ctaSub:    '<span>Free · No forms · </span>Licensed agents answer immediately',
+      sticky:    'Get Your Lower Rate In 2 Minutes — Call Now!',
+      stickyBtn: 'Get My Rate Now' }
+
+  ];
+
+  var v = variants.find(function(item) {
+    return item.match.some(function(m) { return k.indexOf(m) !== -1; });
+  });
+  if (!v) return;
+
+  function setHTML(sel, html) { var el = document.querySelector(sel); if (el) el.innerHTML = html; }
+  function setStickyBtn(text) {
+    var div = document.querySelector('.sticky-btn div'); if (!div) return;
+    var sub = div.querySelector('.s-sub');
+    div.innerHTML = text + (sub ? sub.outerHTML : '');
+  }
+
+  setHTML('.hero-tag', v.tag);
+  setHTML('.hero h1', v.h1);
+  setHTML('.hero-sub', v.sub);
+  setHTML('.cta-sub-line', v.ctaSub);
+  setHTML('.sticky-bar .s1', v.sticky);
+  setStickyBtn(v.stickyBtn);
+})();
+</script>
+
+</body>
+</html>
