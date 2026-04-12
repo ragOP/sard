@@ -241,9 +241,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:clamp(
 <!-- HERO -->
 <section class="hero">
   <div class="hero-tag">Car insurance rates — 2026</div>
-  <h1>Cheapest Car Insurance<br>In Your State —<br><span class="hi">Compare Now.</span></h1>
+  <h1>Cheapest Car Insurance<br>In <span id="hero-place">Your State</span> —<br><span class="hi">Compare Now.</span></h1>
   <p class="hero-sub">
-    Most drivers in your state are overpaying — and their insurer is counting on them not checking. One 2-minute call to our licensed agents <strong>finds the cheapest rate available for your zip code.</strong>
+    Most drivers in <span id="hero-sub-place">your state</span> are overpaying — and their insurer is counting on them not checking. One 2-minute call to our licensed agents <strong>finds the cheapest rate available for your zip code.</strong>
   </p>
   <a href="#below-hero" class="hero-scroll-hint" aria-label="Scroll to rates and details">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
@@ -273,13 +273,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:clamp(
 <!-- STATE RATE COMPARISON -->
 <section class="state-rates">
   <div class="state-rates-inner">
-    <p class="eyebrow">What drivers in your state pay</p>
-    <h2 class="sec-h">The Average Driver In Your State<br>Is Paying Too Much For Insurance</h2>
+    <p class="eyebrow">What drivers in <span id="eyebrow-place">your state</span> pay</p>
+    <h2 class="sec-h">The Average Driver In <span id="sec-h-place">Your State</span><br>Is Paying Too Much For Insurance</h2>
     <p class="sec-sub">Our agents compare dozens of carriers to find what you should actually be paying.</p>
 
     <div class="rate-compare">
       <div class="rate-box current">
-        <div class="rate-lbl">Average rate in your state</div>
+        <div class="rate-lbl">Average rate in <span id="rate-lbl-place">your state</span></div>
         <div class="rate-amt">$140</div>
         <div class="rate-period">per month</div>
         <div class="rate-note">What most drivers are paying without shopping around</div>
@@ -293,7 +293,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:clamp(
     </div>
 
     <div class="save-callout">
-      <div class="save-callout-text">Most drivers in your state save <span>over $80/month</span> — that's <span>$960+ per year</span> — in a single 2-minute call.</div>
+      <div class="save-callout-text">Most drivers in <span id="save-callout-place">your state</span> save <span>over $80/month</span> — that's <span>$960+ per year</span> — in a single 2-minute call.</div>
     </div>
   </div>
 </section>
@@ -307,7 +307,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:clamp(
     </div>
     <div class="stat-box">
       <div class="stat-n">$960+</div>
-      <div class="stat-l"><strong>average annual savings</strong><span>for drivers in your state</span></div>
+      <div class="stat-l"><strong>average annual savings</strong><span>for drivers in <span id="stat-place">your state</span></span></div>
     </div>
     <div class="stat-box">
       <div class="stat-n">50+</div>
@@ -416,7 +416,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:clamp(
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
   <div class="btag">Find your lowest rate — free</div>
-  <h2>Stop Overpaying.<br>Find The Cheapest Rate<br>In <span class="hi">Your State.</span></h2>
+  <h2>Stop Overpaying.<br>Find The Cheapest Rate<br>In <span class="hi" id="bottom-place">Your State.</span></h2>
   <h3>One 2-minute call to our licensed agents compares dozens of carriers and finds your lowest available rate — same coverage, immediately lower price.</h3>
   <div class="bottom-cta-arrow" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -450,7 +450,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:clamp(
 <!-- STICKY BAR -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-left">
-    <div class="s1">Find The Cheapest Rate In Your State — Call Now</div>
+    <div class="s1">Find The Cheapest Rate In <span id="sticky-place">Your State</span> — Call Now</div>
     <div class="s2">Free call · <span>Licensed agents answer immediately</span></div>
   </div>
   <a href="tel:+16197753027" class="sticky-btn">
@@ -460,6 +460,51 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:clamp(
 </div>
 
 <script>
+(function () {
+  function titleCasePlace(str) {
+    if (!str || typeof str !== 'string') return '';
+    return str.trim().replace(/[<>]/g, '').split(/\s+/).map(function (w) {
+      if (!w) return w;
+      return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+    }).join(' ');
+  }
+
+  function pickPlaceFromGeo(data) {
+    if (!data || data.error) return null;
+    var cc = String(data.country_code || '').toUpperCase();
+    if (cc === 'US' && data.region) return data.region;
+    if (data.city) return data.city;
+    if (data.region) return data.region;
+    return null;
+  }
+
+  function applyPlace(placeTitle) {
+    if (!placeTitle) return;
+    var placeBottom = placeTitle + '.';
+    document.getElementById('hero-place').textContent = placeTitle;
+    document.getElementById('hero-sub-place').textContent = placeTitle;
+    document.getElementById('eyebrow-place').textContent = placeTitle;
+    document.getElementById('sec-h-place').textContent = placeTitle;
+    document.getElementById('rate-lbl-place').textContent = placeTitle;
+    document.getElementById('save-callout-place').textContent = placeTitle;
+    document.getElementById('stat-place').textContent = placeTitle;
+    document.getElementById('bottom-place').textContent = placeBottom;
+    document.getElementById('sticky-place').textContent = placeTitle;
+    document.title = 'Cheapest Car Insurance In ' + placeTitle + ' — Compare Now';
+  }
+
+  fetch('https://ipapi.co/json/', { credentials: 'omit' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('geo http');
+      return r.json();
+    })
+    .then(function (data) {
+      var raw = pickPlaceFromGeo(data);
+      if (!raw) return;
+      applyPlace(titleCasePlace(raw));
+    })
+    .catch(function () {});
+})();
 const bar = document.getElementById('stickyBar');
 const obs = new IntersectionObserver(([e]) => {
   bar.classList.toggle('visible', !e.isIntersecting);
